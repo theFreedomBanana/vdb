@@ -1,0 +1,25 @@
+%section#home
+	%div.container
+		%div.row
+			%div
+				= image_tag("background/logo_vdb.png", :id =>"logo", :class =>"img-responsive", :alt =>"logo_vdb")
+
+			%nav#home_nav.navbar.navbar-default{:role => "navigation"}
+				.container-fluid
+					%ul.nav.navbar-nav
+						%li
+							%a.liens{:href => "#"} QUI SOMMES NOUS
+						%li
+							%a.liens{:href => "#"} NOS PROJETS
+						%li
+							%a.liens{:href => "#"} PRESSE
+						%li
+							%a.liens{:href => "#"} ET VOUS
+						%li
+							%a.liens{:href => "#"} SOUTENEZ NOUS
+
+			%div#catchphrase.col-xs-12
+				%p REDONNONS UN SENS HUMAIN AU TERME SDF.
+			%div#middle_line.col-xs-4.col-xs-offset-4
+			%div#middle_line.col-xs-4.col-xs-offset-4
+				%p#loi Association loi 1901 

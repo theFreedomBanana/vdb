@@ -1,1 +1,77 @@
 @import "bootstrap"
+
+$text-color: #F2EDED
+
+html
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+#home
+  background-image: url(background/home_image.jpg)
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+#logo
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-top: 40px
+
+#home_nav
+  background-color: transparent
+  border-color: transparent
+  margin-top: 20px
+
+.liens
+  color: $text-color
+
+#catchphrase
+  text-align: center
+  margin-top: 20px
+  font-size: 30px
+  color: $text-color
+
+#middle_line
+  border-top: solid 1.5px $text-color 
+
+#loi
+  padding-top: 13px
+  font-size: 11px
+  text-align: center
+  color: $text-color
+
+.navbar-nav
+  width: 100%
+  text-align: center
+  > li
+    float: none
+    display: inline-block
+
+/* Sticky footer styles */
+html
+  position: relative
+  min-height: 100%
+
+body
+  /* Margin bottom by footer height */
+  margin-bottom: 60px
+
+.footer
+  position: fixed
+  bottom: 0
+  width: 100%
+  // Set the fixed height of the footer here
+  height: 60px
+  background-color: #000001
+
+.footer_text
+  text-align: center
+  color: $text-color
