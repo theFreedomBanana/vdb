@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+	$("#header").hide();
+	$(document).scroll(function() {
+		var navbar = $("#header").offset();
+		var navbartop = navbar.top
+		if (navbartop < 420) {
+			$("#header").hide();
+		}
+		else {
+			$("#header").show();
+		}
+	});
+});

@@ -15,7 +15,7 @@ html
   left: 0px
   width: 100%
   height: 100%
-  background-repeat: no-repeat
+  // background-repeat: no-repeat
   background-position: center center
   background-size: cover
 
@@ -61,17 +61,41 @@ html
   min-height: 100%
 
 body
-  /* Margin bottom by footer height */
   margin-bottom: 60px
 
 .footer
   position: fixed
   bottom: 0
   width: 100%
-  // Set the fixed height of the footer here
-  height: 60px
+  height: 50px
   background-color: #000001
 
 .footer_text
   text-align: center
   color: $text-color
+
+/* Header style */
+#header
+  position: fixed
+  top: 0
+  width: 100%
+  height: 70px
+  background-color: #000001
+  border-color: #000001
+  z-index: 1
+
+  .navbar-nav
+    width: 90%
+
+  li
+    margin: auto
+
+  a
+    font-size: 20px
+
+#header_logo
+  top: 15px
+  width: 3%
+  height: 3%
+  float: left
+
