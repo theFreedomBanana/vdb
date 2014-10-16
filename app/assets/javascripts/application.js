@@ -17,6 +17,7 @@
 
 
 $(document).ready(function() {
+	$("#moins").hide();
 	$("#header").hide();
 	$(document).scroll(function() {
 		var navbar = $("#header").offset();
@@ -28,4 +29,23 @@ $(document).ready(function() {
 			$("#header").show();
 		}
 	});
+
+	$('#plus').click(function() {
+		$('#logo_jb').hide();
+		$('#yellowblock').slideDown("slow");
+		$('#plus').hide();
+		$('#moins').show();
+	});
+
+	$('#moins').click(function() {
+		$('#yellowblock').slideUp("slow");
+		$('#moins').hide();
+		$('#plus').show();
+	});
+
+	$('#moins').click(function() {
+		$('#logo_jb').delay(660).show(0);
+	});
+
 });
+
