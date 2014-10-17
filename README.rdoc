@@ -1,28 +1,13 @@
-== README
+== Le site de l'association Vues d'en bas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Une application rails pour remplacer la [landing page](http://www.vuesdenbas.fr/)
 
-Things you may want to cover:
+L'association Vues d'en bas à pour objectif de redonner de la visibilité aux sans-abri.
 
-* Ruby version
+Autours de cette problématique, Vues d'en bas organisent différents évènements :
 
-* System dependencies
+* Maraudes avec distribution de nourriture
 
-* Configuration
+* Exposition (photos, montages) autours du thème des sans-abri
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Le site doit permettre de présenter l'association ainsi que les différents projets qui ont lieux tout au long de l'année, d'en contacter ses fondateurs, de faire un don, ou encore d'acheter une oeuvre.
