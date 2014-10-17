@@ -33,7 +33,7 @@ html
 .liens
   color: $text-color
 
-#catchphrase
+.catchphrase
   text-align: center
   margin-top: 20px
   font-size: 30px
@@ -134,7 +134,7 @@ body
   #quisommesnous
     top: 1080px
 
-#catchphrase
+.catchphrase
   margin-top: 4%
   h2
     font-size: 35px
@@ -164,3 +164,56 @@ body
 
   #barre_grise
     border-top: 2px dotted $text-color
+
+
+// "Nos projets", 3ème page
+#nosprojets
+  background-image: url(background/nosprojets_image.png)
+  position: absolute
+  top: 1280px
+  left: 0px
+  width: 100%
+  height: 100%
+  // background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+// @media (min-height: 470px)
+//   #quisommesnous
+//     top: 940px
+
+// @media (min-height: 568px)
+//   #quisommesnous
+//     top: 1200px
+
+// @media (min-height: 720px)
+//   #quisommesnous
+//     top: 1440px
+
+// @media (min-height: 768px)
+//   #quisommesnous
+//     top: 1500px
+
+// @media (min-height: 800px)
+//   #quisommesnous
+//     top: 1800px
+
+// @media (min-height: 1080px)
+//   #quisommesnous
+//     top: 2100px
+
+.photo_col
+  width: 20% !important
+  padding-left: 0px !important
+  padding-right: 0px !important
+  min-height: 0px !important
+  margin-left: 0% !important
+
+.onscroll
+  position: absolute
+  height: 100%
+  width: 98%
+
+.shadow
+  z-index: 1
+  background-color: rgba(8, 6, 0, 0.64)

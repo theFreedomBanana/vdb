@@ -47,5 +47,12 @@ $(document).ready(function() {
 		$('#logo_jb').delay(660).show(0);
 	});
 
+	$('.photo_col').mouseover(function() {
+		$(this).find('.onscroll').addClass("shadow");
+	});
+	$('.photo_col').mouseout(function() {
+		$('.onscroll').removeClass("shadow");
+	});
+
 });
 
