@@ -1,6 +1,6 @@
 == Le site de l'association Vues d'en bas
 
-Une application rails pour remplacer la [landing page](http://www.vuesdenbas.fr/)
+Une application rails pour remplacer la landing page http://www.vuesdenbas.fr/
 
 L'association Vues d'en bas à pour objectif de redonner de la visibilité aux sans-abri.
 
