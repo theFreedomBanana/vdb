@@ -17,7 +17,7 @@
 
 
 $(document).ready(function() {
-	$("#moins").hide();
+	$(".moins").hide();
 	$("#header").hide();
 	$(document).scroll(function() {
 		var navbar = $("#header").offset();
@@ -30,23 +30,36 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#plus').click(function() {
+	// scrolldown 1st yellowblock
+	$('#plus1').click(function() {
 		$('#logo_jb').hide();
-		$('#yellowblock').slideDown("slow");
-		$('#plus').hide();
-		$('#moins').show();
+		$('#yb1').slideDown("slow");
+		$('#plus1').hide();
+		$('#moins1').show();
 	});
 
-	$('#moins').click(function() {
-		$('#yellowblock').slideUp("slow");
-		$('#moins').hide();
-		$('#plus').show();
-	});
-
-	$('#moins').click(function() {
+	$('#moins1').click(function() {
+		$('#yb1').slideUp("slow");
+		$('#moins1').hide();
+		$('#plus1').show();
 		$('#logo_jb').delay(660).show(0);
 	});
 
+	// scrolldown 2nd yellowblock
+	$('#plus2').click(function() {
+		$('#yb2').slideDown("slow");
+		$('#plus2').hide();
+		$('#moins2').show();
+	});
+
+	$('#moins2').click(function() {
+		$('#yb2').slideUp("slow");
+		$('#moins2').hide();
+		$('#plus2').show();
+	});
+
+
+	// black tile on photos on 'nos projets' when hover
 	$('.photo_col').mouseover(function() {
 		$(this).find('.onscroll').addClass("shadow");
 	});
