@@ -9,8 +9,10 @@ html
   background-size: cover
 
 h1, h2, h3, h4, h5, h6
-  color: $text-color
   text-align: center
+  
+h1, h2, h3
+  color: $text-color
 
 p
   text-align: center
@@ -18,13 +20,22 @@ p
 h1
   font-size: 2.5em
 
+h2
+  font-size: 2.1em
+
 @media (max-width: 480px)
+  p
+    font-size: 0.7em
+
   h1
     font-size: 2em
 
+  h2
+    font-size: 1.6em
 
-h2
-  font-size: 30px
+  .col-xs-6
+    padding-left: 5px !important
+    padding-right: 5px !important
 
 .navbar-nav
   width: 100%
@@ -112,7 +123,7 @@ body
       &:hover
         color: #777 !important
 
-.catchphrase
+.page_title
   margin-top: 1.5%
   text-align: center
 
@@ -186,15 +197,23 @@ body
   margin-left: auto
   cursor: pointer
 
+.yellow_container
+  // width: 100% !important
+  // padding-left: 0% !important
+  // padding-right: 0% !important
+
 .yellowblock
   display: none
   background-color: rgba(255, 207, 0, 0.8)
+  padding-top: 10px
+  padding-bottom: 10px
 
   .col-xs-8, .col-xs-4
     margin-top: 15px
 
   #barre_grise
     border-top: 2px dotted $text-color
+    padding-bottom: 10px
 
 
 // "Nos projets", 3ème page
