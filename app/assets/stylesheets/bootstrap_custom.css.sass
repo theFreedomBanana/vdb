@@ -10,46 +10,21 @@ html
 
 h1, h2, h3, h4, h5, h6
   color: $text-color
-
-#home
-  background-image: url(background/home_image.jpg)
-  position: absolute
-  top: 0px
-  left: 0px
-  width: 100%
-  height: 100%
-  // background-repeat: no-repeat
-  background-position: center center
-  background-size: cover
-
-#logo
-  display: block
-  margin-left: auto
-  margin-right: auto
-  margin-top: 40px
-
-#home_nav
-  background-color: transparent
-  border-color: transparent
-  margin-top: 20px
-
-.liens
-  color: $text-color
-
-.catchphrase
   text-align: center
-  margin-top: 20px
+
+p
+  text-align: center
+
+h1
+  font-size: 2.5em
+
+@media (max-width: 480px)
+  h1
+    font-size: 2em
+
+
+h2
   font-size: 30px
-  color: $text-color
-
-#middle_line
-  border-top: solid 1.5px $text-color 
-
-#loi
-  padding-top: 13px
-  font-size: 11px
-  text-align: center
-  color: $text-color
 
 .navbar-nav
   width: 100%
@@ -57,25 +32,7 @@ h1, h2, h3, h4, h5, h6
   > li
     float: none
     display: inline-block
-
-/* Sticky footer styles */
-html
-  position: relative
-  min-height: 100%
-
-body
-  margin-bottom: 60px
-
-.footer
-  position: fixed
-  bottom: 0
-  width: 100%
-  height: 50px
-  background-color: #000001
-
-.footer_text
-  text-align: center
-  color: $text-color
+  
 
 /* Header style */
 #header
@@ -102,6 +59,82 @@ body
   height: 3%
   float: left
 
+
+/* Sticky footer styles */
+html
+  position: relative
+  min-height: 100%
+
+body
+  margin-bottom: 60px
+
+.footer
+  position: fixed
+  bottom: 0
+  width: 100%
+  height: 50px
+  background-color: #000001
+
+.footer_text
+  color: $text-color
+
+
+// "Home", 1ère page
+#home
+  background-image: url(background/home_image.jpg)
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100%
+  height: 100%
+  // background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+#logo
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-top: 40px
+
+#home_nav
+  background-color: transparent
+  border-color: transparent
+  margin-top: 4%
+
+  ul
+    margin-left: auto
+    margin-right: auto
+
+    a
+      color: $text-color !important
+      font-size: 20px
+      &:hover
+        color: #777 !important
+
+.catchphrase
+  margin-top: 1.5%
+  text-align: center
+
+#middle_line
+  border-top: solid 2px $text-color 
+
+#loi
+  padding-top: 13px
+  font-size: 13px
+  color: $text-color
+
+.bloc_fleche
+  position: absolute
+  width: 20%
+  bottom: 50px
+  left: 40%
+
+  #fleche_blanche
+    margin-left: auto
+    margin-right: auto
+
+
 // "Qui sommes nous", 2ème page
 #quisommesnous
   background-image: url(background/quisommesnous_image.jpg)
@@ -119,7 +152,7 @@ body
 
 @media (min-height: 568px)
   #quisommesnous
-    top: 600px
+    top: 680px
 
 @media (min-height: 720px)
   #quisommesnous
@@ -137,10 +170,6 @@ body
   #quisommesnous
     top: 1080px
 
-.catchphrase
-  margin-top: 4%
-  h2
-    font-size: 35px
 
 #logo_jb
   margin-right: auto
@@ -160,7 +189,6 @@ body
 .yellowblock
   display: none
   background-color: rgba(255, 207, 0, 0.8)
-  text-align: center
 
   .col-xs-8, .col-xs-4
     margin-top: 15px
@@ -173,7 +201,7 @@ body
 #nosprojets
   background-image: url(background/nosprojets_image.png)
   position: absolute
-  top: 1280px
+  top: 1360px
   left: 0px
   width: 100%
   height: 100%
@@ -226,7 +254,7 @@ body
 #nosactions
   background-image: url(background/nosactions_image.jpg)
   position: absolute
-  top: 1950px
+  top: 2040px
   left: 0px
   width: 100%
   height: 100%
@@ -263,7 +291,7 @@ body
 #presse
   background-image: url(background/presse_image.png)
   position: absolute
-  top: 2630px
+  top: 2720px
   left: 0px
   width: 100%
   height: 100%
@@ -295,3 +323,43 @@ body
 //   #quisommesnous
 //     top: 2100px
 
+
+// "etvous", 6ème page
+#etvous
+  background-image: url(background/etvous_image.jpg)
+  position: absolute
+  top: 3400px
+  left: 0px
+  width: 100%
+  height: 100%
+  // background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+// @media (min-height: 470px)
+//   #quisommesnous
+//     top: 940px
+
+// @media (min-height: 568px)
+//   #quisommesnous
+//     top: 1200px
+
+// @media (min-height: 720px)
+//   #quisommesnous
+//     top: 1440px
+
+// @media (min-height: 768px)
+//   #quisommesnous
+//     top: 1500px
+
+// @media (min-height: 800px)
+//   #quisommesnous
+//     top: 1800px
+
+// @media (min-height: 1080px)
+//   #quisommesnous
+//     top: 2100px
+
+.blackblock
+  background-color: black
+  height: 30% !important
