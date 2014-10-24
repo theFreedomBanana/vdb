@@ -389,6 +389,58 @@ body
 //   #quisommesnous
 //     top: 2100px
 
+
+#blackblock_col12
+  height: 680px
+  line-height: 680px
+  text-align: center
+
 .blackblock
+  width: 33%
   background-color: black
-  height: 30% !important
+  height: 30% 
+  vertical-align: middle
+  display: inline-block
+  line-height: normal
+  text-align: left
+  float: none
+
+  h5
+    margin-top: 30px
+    margin-bottom: 20px
+    color: $text-color
+  
+  .pblanc
+    color: $text-color
+
+  .pjaune
+    color: rgba(255, 207, 0, 1)
+
+@media (max-width: 800px)
+  #blackblock_col12
+    // height: auto
+    // line-height: 400px
+    // text-align: center
+
+  .blackblock
+    width: 60%
+    height: 20%
+
+
+// disable Bootstrap padding and margin 
+
+.full_width_container
+  padding-left: 0px !important
+  padding-right: 0px !important
+  width: auto !important
+  min-width: 0 !important
+
+  .full_width_row
+    margin-left: 0px !important
+    margin-right: 0px !important
+    padding-left: 0px !important
+    padding-right: 0px !important
+
+    .full_width_col12
+      padding-left: 0px !important
+      padding-right: 0px !important
