@@ -1,16 +1,24 @@
-%nav#header.navbar.navbar-default{:role => "navigation"}
-	.container-fluid
-		= image_tag("logos/logo_vdb.png", :id => "header_logo", :class =>"img-responsive", :alt =>"logo_vdb")
-		%ul.nav.navbar-nav
-			%li
-				%a.liens{:href => "#"} QUI SOMMES NOUS
-			%li
-				%a.liens{:href => "#"} NOS PROJETS
-			%li
-				%a.liens{:href => "#"} NOS ACTIONS
-			%li
-				%a.liens{:href => "#"} PRESSE
-			%li
-				%a.liens{:href => "#"} ET VOUS
-			%li
-				%a.liens{:href => "#"} SOUTENEZ NOUS
+%nav#header.navbar.navbar-default.navbar-fixed-top{ :role => "navigation"}
+  .container-fluid
+    .navbar-header
+      %button{ :type => "button", :class => "navbar-toggle collapsed", :"data-toggle" => "collapse", :"data-target" => "#header-navbar-collapse"}
+        %span{ :class => "sr-only"} Toggle navigation
+        %span{ :class => "icon-bar"}
+        %span{ :class => "icon-bar"}
+        %span{ :class => "icon-bar"}
+
+    
+    .collapse.navbar-collapse#header-navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a.liens.active{:href => "#"} QUI SOMMES NOUS
+        %li
+          %a.liens.active{:href => "#"} NOS PROJETS
+        %li
+          %a.liens.active{:href => "#"} NOS ACTIONS
+        %li
+          %a.liens.active{:href => "#"} PRESSE
+        %li
+          %a.liens.active{:href => "#"} ET VOUS
+        %li
+          %a.liens.active{:href => "#"} SOUTENEZ NOUS
