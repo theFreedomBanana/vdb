@@ -20,6 +20,8 @@
 $(document).ready(function() {
 	$(".moins").hide();
 	$("#header").hide();
+
+	// show the navbar when scrolling below half homepage
 	$(document).scroll(function() {
 		var navbar = $("#header").offset();
 		var navbartop = navbar.top
@@ -66,6 +68,14 @@ $(document).ready(function() {
 	});
 	$('.photo_col').mouseout(function() {
 		$('.onscroll').removeClass("shadow");
+	});
+
+	// set the navbar above each page when hyperlink clicked
+	var offset = 55;
+	$('.navbar li a').click(function(event) {
+		event.preventDefault();
+		$($(this).attr('href'))[0].scrollIntoView();
+		scrollBy(0, -offset);
 	});
 
 });

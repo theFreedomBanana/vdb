@@ -6,7 +6,7 @@
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
 
-	%body
+	%body{ :"data-spy" => "scroll", :"data-target" => "#header", :"data-offset" => "70"}
 		=render "shared/header"
 		=yield
 		=render "shared/footer"
