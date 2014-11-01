@@ -167,31 +167,6 @@ body
   background-position: center center
   background-size: cover
 
-// @media (min-height: 470px)
-//   #quisommesnous
-//     top: 470px
-
-// @media (min-height: 568px)
-//   #quisommesnous
-//     top: 680px
-
-// @media (min-height: 720px)
-//   #quisommesnous
-//     top: 720px
-
-// @media (min-height: 768px)
-//   #quisommesnous
-//     top: 768px
-
-// @media (min-height: 800px)
-//   #quisommesnous
-//     top: 950px
-
-// @media (min-height: 1080px)
-//   #quisommesnous
-//     top: 1080px
-
-
 #logo_jb
   margin-right: auto
   margin-left: auto
@@ -237,30 +212,6 @@ body
   // background-repeat: no-repeat
   background-position: center center
   background-size: cover
-
-// @media (min-height: 470px)
-//   #quisommesnous
-//     top: 940px
-
-// @media (min-height: 568px)
-//   #quisommesnous
-//     top: 1200px
-
-// @media (min-height: 720px)
-//   #quisommesnous
-//     top: 1440px
-
-// @media (min-height: 768px)
-//   #quisommesnous
-//     top: 1500px
-
-// @media (min-height: 800px)
-//   #quisommesnous
-//     top: 1800px
-
-// @media (min-height: 1080px)
-//   #quisommesnous
-//     top: 2100px
 
 @media (min-width: 1080px)
   .photo_col
@@ -322,69 +273,54 @@ body
   background-position: center center
   background-size: cover
 
-#blackblock_col12
-  height: 680px
-  line-height: 680px
-  text-align: center
-
-.blackblock
-  width: 33%
-  background-color: black
-  height: 30% 
-  vertical-align: middle
-  display: inline-block
-  line-height: normal
-  text-align: left
-  float: none
-
-  h5
-    margin-top: 30px
-    margin-bottom: 20px
-    color: $text-color
-  
-  .pblanc
-    color: $text-color
-
-  .pjaune
-    color: rgba(255, 207, 0, 1)
-
-@media (max-width: 800px)
-  #blackblock_col12
-    // height: auto
-    // line-height: 400px
-    // text-align: center
-
-  .blackblock
-    width: 60%
-    height: 20%
-
-
 // disable Bootstrap padding and margin 
-
-.full_width_container
-  padding-left: 0px !important
-  padding-right: 0px !important
-  width: auto !important
-  min-width: 0 !important
-
-  .full_width_row
-    margin-left: 0px !important
-    margin-right: 0px !important
+@media (min-width: 767px)
+  .full_width_container
     padding-left: 0px !important
     padding-right: 0px !important
+    width: auto !important
+    min-width: 0 !important
 
-    .full_width_col12
+    .full_width_row
+      margin-left: 0px !important
+      margin-right: 0px !important
       padding-left: 0px !important
       padding-right: 0px !important
 
-// "souteneznous", 7ème page
-#souteneznous
-  background-image: url(background/souteneznous_image.jpg)
-  position: absolute
-  top: 600%
-  left: 0px
-  width: 100%
-  height: 100%
-  // background-repeat: no-repeat
-  background-position: center center
-  background-size: cover
+  .full_width_col12
+    padding-left: 0px !important
+    padding-right: 0px !important
+
+  #blackblock_col12
+    height: 680px
+    line-height: 680px
+    text-align: center
+
+    .blackblock
+      width: 33%
+      height: 30% 
+      background-color: black
+      vertical-align: middle
+      display: inline-block
+      line-height: normal
+      text-align: left
+      float: none
+
+      h5
+        margin-top: 30px
+        margin-bottom: 20px
+        color: $text-color
+
+@media (max-width: 760px)
+  .blackblock1
+    margin-top: 100px
+
+  .blackblock
+    background-color: black
+    margin-bottom: 2px
+
+.pblanc
+  color: $text-color
+
+.pjaune
+  color: rgba(255, 207, 0, 1)
