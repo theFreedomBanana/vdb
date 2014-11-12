@@ -1,29 +1,30 @@
 %section#home
 	%div.container
 		%div.row
-			%div
+			.col-xs-4.col-xs-offset-4
 				= image_tag("logos/logo_vdb.png", :id =>"logo", :class =>"img-responsive", :alt =>"logo_vdb")
 
-			%nav#home_nav.navbar.navbar-default{:role => "navigation"}
-				.container-fluid
-					%ul.nav.navbar-nav
-						%li
-							%a{:href => "#quisommesnous"} QUI SOMMES NOUS
-						%li
-							%a{:href => "#nosprojets"} NOS PROJETS
-						%li
-							%a{:href => "#nosactions"} NOS ACTIONS
-						%li
-							%a{:href => "#presse"} PRESSE
-						%li
-							%a{:href => "#etvous"} ET VOUS
-						%li
-							%a{:href => "#souteneznous"} SOUTENEZ NOUS
+			.col-xs-12
+				%nav#home_nav.navbar.navbar-default{:role => "navigation"}
+					.container-fluid
+						%ul.nav.navbar-nav
+							%li
+								%a{:href => "#quisommesnous"} QUI SOMMES NOUS
+							%li
+								%a{:href => "#nosprojets"} NOS PROJETS
+							%li
+								%a{:href => "#nosactions"} NOS ACTIONS
+							%li
+								%a{:href => "#presse"} PRESSE
+							%li
+								%a{:href => "#etvous"} ET VOUS
+							%li
+								%a{:href => "#souteneznous"} SOUTENEZ NOUS
 
 			.col-xs-12.col-md-8.col-md-offset-2
 				%h1 REDONNONS UN SENS HUMAIN AU TERME SDF.
 			%div#middle_line.col-xs-4.col-xs-offset-4
 				%p#loi Association loi 1901
 			
-			.col-xs-12.bloc_fleche#blocfleche
+			.col-xs-4#bloc_fleche
 				= image_tag("logos/fleche_blanche.png", :id =>"fleche_blanche", :class =>"img-responsive", :alt =>"fleche_blanche")
