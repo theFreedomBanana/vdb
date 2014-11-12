@@ -1,6 +1,6 @@
 %section#home
-	%div.container
-		%div.row
+	.container
+		.row
 			.col-xs-4.col-xs-offset-4
 				= image_tag("logos/logo_vdb.png", :id =>"logo", :class =>"img-responsive", :alt =>"logo_vdb")
 
@@ -21,10 +21,10 @@
 							%li
 								%a{:href => "#souteneznous"} SOUTENEZ NOUS
 
-			.col-xs-12.col-md-8.col-md-offset-2
+			#catchline.col-xs-12.col-md-8.col-md-offset-2
 				%h1 REDONNONS UN SENS HUMAIN AU TERME SDF.
-			%div#middle_line.col-xs-4.col-xs-offset-4
+			#middle_line.col-xs-4.col-xs-offset-4
 				%p#loi Association loi 1901
 			
-			.col-xs-4#bloc_fleche
+			.col-xs-1.col-lg-4#bloc_fleche
 				= image_tag("logos/fleche_blanche.png", :id =>"fleche_blanche", :class =>"img-responsive", :alt =>"fleche_blanche")
