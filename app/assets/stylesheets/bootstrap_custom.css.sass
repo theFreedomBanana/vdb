@@ -369,7 +369,7 @@ body
   background-size: cover
 
 // disable Bootstrap padding and margin 
-@media all and (min-width: 767px)
+@media all and (min-width: 992px)
   .full_width_container
     padding-left: 0px !important
     padding-right: 0px !important
@@ -406,13 +406,21 @@ body
         margin-bottom: 20px
         color: $text-color
 
-@media all and (max-width: 760px)
+@media all and (max-width: 992px)
   .blackblock1
     margin-top: 100px
 
   .blackblock
     background-color: black
     margin-bottom: 2px
+
+@media all and (max-height: 400px)
+  .blackblock1
+    margin-top: 40px !important
+
+@media all and (max-width: 500px) and (min-height: 600px)
+  .blackblock1
+    margin-top: 150px !important
 
 .pblanc
   color: $text-color
