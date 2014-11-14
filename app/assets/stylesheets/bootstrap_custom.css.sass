@@ -1,6 +1,6 @@
 $screen-xs-max: 380px
 $screen-sm-min: 381px
-$text-color: #F2EDED
+$white-text: #F2EDED
 
 @import "bootstrap"
 
@@ -35,8 +35,8 @@ body
 p, h1, h2, h3, h4, h5, h6
   text-align: center
   
-h1, h2, h3
-  color: $text-color
+h1, h2, h3, h5
+  color: $white-text
 
 h1
   font-size: 2.5em
@@ -138,7 +138,7 @@ body
 
 .contact
   margin-top: 2%
-  color: $text-color
+  color: $white-text
 
 @media all and (max-width: 600px)
   .footer
@@ -172,16 +172,16 @@ body
     margin-right: auto
 
     a
-      color: $text-color !important
+      color: $white-text !important
       font-size: 20px
       &:hover
         color: #777 !important        
 
 #middle_line
-  border-top: solid 2px $text-color 
+  border-top: solid 2px $white-text 
 
 #loi
-  color: $text-color
+  color: $white-text
 
 #bloc_fleche
   position: absolute
@@ -259,7 +259,7 @@ body
     margin-top: 15px
 
   #barre_grise
-    border-top: 2px dotted $text-color
+    border-top: 2px dotted $white-text
     padding-bottom: 10px
 
 @media all and (max-width: 600px)
@@ -323,7 +323,7 @@ body
   background-size: cover
 
 #a_voir
-  color: $text-color
+  color: $white-text
 
 
 // "presse", 5ème page
@@ -368,6 +368,9 @@ body
   background-position: center center
   background-size: cover
 
+  .block_text
+    background-color: black
+
 // disable Bootstrap padding and margin 
 @media all and (min-width: 992px)
   .full_width_container
@@ -382,19 +385,16 @@ body
       padding-left: 0px !important
       padding-right: 0px !important
 
-  .full_width_col12
+  #block_col12
     padding-left: 0px !important
     padding-right: 0px !important
-
-  #blackblock_col12
-    height: 680px
-    line-height: 680px
+    height: 540px
+    line-height: 540px
     text-align: center
 
-    .blackblock
+    .block_text
       width: 33%
       height: 30% 
-      background-color: black
       vertical-align: middle
       display: inline-block
       line-height: normal
@@ -404,26 +404,24 @@ body
       h5
         margin-top: 30px
         margin-bottom: 20px
-        color: $text-color
 
 @media all and (max-width: 992px)
-  .blackblock1
+  .block_text1
     margin-top: 100px
 
-  .blackblock
-    background-color: black
+  .block_text
     margin-bottom: 2px
 
 @media all and (max-height: 400px)
-  .blackblock1
+  .block_text1
     margin-top: 40px !important
 
-@media all and (max-width: 500px) and (min-height: 600px)
-  .blackblock1
-    margin-top: 150px !important
+  @media all and (max-width: 500px) and (min-height: 600px)
+    .block_text1
+      margin-top: 150px !important
 
 .pblanc
-  color: $text-color
+  color: $white-text
 
 .pjaune
   color: rgba(255, 207, 0, 1)
@@ -440,3 +438,25 @@ body
   background-repeat: no-repeat
   background-position: center center
   background-size: cover
+
+  @media all and (min-width: 992px)
+    #block_adherer
+      margin-top: -170px
+
+  @media all and (max-width: 992px)
+    .block_text1
+      margin-top: 40px !important
+  
+  @media all and (max-height: 600px)
+    .col-xs-12
+      margin-left: 0px !important
+      margin-right: 0px !important
+      padding-left: 0px !important
+      padding-right: 0px !important
+
+  @media all and (max-height: 500px) and (max-width: 600px)
+    .block_text1
+      margin-top: 0px !important
+
+    h2
+      margin-bottom: 0px !important
