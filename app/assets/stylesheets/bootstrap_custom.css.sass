@@ -4,6 +4,14 @@ $white-text: #F2EDED
 
 @import "bootstrap"
 
+@font-face
+  font-family: "Josefin Sans"
+  src: url('http://fonts.googleapis.com/css?family=Josefin+Sans')
+
+@font-face
+  font-family: "EB Garamond"
+  src: url('http://fonts.googleapis.com/css?family=EB+Garamond')
+
 // La grid a été modifiée afin d'utiliser le col-sm plus tôt
 // Le col-sm commence dorénavant à 381px. Ces @media servent à ajuster le container sur la col-sm de sorte qu'il ne dépasse pas.
 // Voir => http://getbootstrap.com/css/ pour la taille du container en fonction du device
@@ -30,14 +38,15 @@ html
   -o-background-size: cover
   background-size: cover
 
-body
-
-p, h1, h2, h3, h4, h5, h6
+p
   text-align: center
-  
-h1, h2, h3, h5
-  color: $white-text
+  font-family: "EB Garamond", Arial, Verdana, sans-serif
 
+h1, h2, h3, h4, h5, h6
+  text-align: center
+  color: $white-text
+  font-family: "Josefin Sans", Arial, Verdana, sans-serif
+  
 h1
   font-size: 2.5em
 
@@ -92,6 +101,7 @@ h2
 
   a
     font-size: 18px
+    font-family: "Josefin Sans", Arial, Verdana, sans-serif
 
   a:hover
     color: white !important
@@ -113,7 +123,7 @@ h2
     height: 50px
     left: -15px !important
 
-@media all and (max-width: 600px)
+@media all and (max-height: 600px)
   #header-navbar-collapse
     a
       font-size: 0.8em !important
@@ -193,14 +203,28 @@ body
     margin-left: auto
     margin-right: auto
 
-@media all and (max-width: 600px)
+// Repositionne plus au milieu les éléments de la homepage sur un écran de plus de 800px de haut
+@media all and (min-width: 1280px) and (min-height: 800px)
+  #logo
+    margin-top: 80px
+    margin-bottom: 80px
+
+@media all and (max-height: 600px)
+  #home_nav
+    a
+      font-size: 14px !important
+
+  #catchline
+    margin-top: -40px
+
+@media all and (max-height: 420px)
   #logo
     width: 50%
     height: 50%
 
   #home_nav
     a
-      font-size: 0.8em !important
+      font-size: 11px !important
       padding-top: 0px !important
       padding-bottom: 0px !important
 
