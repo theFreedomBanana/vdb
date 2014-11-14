@@ -1,6 +1,27 @@
+$screen-xs-max: 380px
+$screen-sm-min: 381px
+$text-color: #F2EDED
+
 @import "bootstrap"
 
-$text-color: #F2EDED
+// La grid a été modifiée afin d'utiliser le col-sm plus tôt
+// Le col-sm commence dorénavant à 381px. Ces @media servent à ajuster le container sur la col-sm de sorte qu'il ne dépasse pas.
+// Voir => http://getbootstrap.com/css/ pour la taille du container en fonction du device
+@media all and (min-width: 381px) and (max-width: 480px)
+  .container
+    width: 361px !important
+
+@media all and (min-width: 481px) and (max-width: 580px)
+  .container
+    width: 461px !important
+
+@media all and (min-width: 581px) and (max-width: 680px)
+  .container
+    width: 561px !important
+
+@media all and (min-width: 681px) and (max-width: 767px)
+  .container
+    width: 661px !important
 
 
 html
@@ -11,14 +32,11 @@ html
 
 body
 
-h1, h2, h3, h4, h5, h6
+p, h1, h2, h3, h4, h5, h6
   text-align: center
   
 h1, h2, h3
   color: $text-color
-
-p
-  text-align: center
 
 h1
   font-size: 2.5em
@@ -263,7 +281,19 @@ body
   background-position: center center
   background-size: cover
 
-@media all and (min-width: 760px)
+@media all and (min-width: 381px) and (max-width: 700px)
+
+  .photo_col
+    width: 33.333% !important
+
+.photo_col
+  padding: 0px !important
+
+  img
+    margin-left: auto
+    margin-right: auto
+
+@media all and (min-width: 992px)
   .photo_col
     width: 20% !important
     padding: 0px !important
@@ -273,11 +303,6 @@ body
   .shadow
     z-index: 1
     background-color: rgba(8, 6, 0, 0.64)
-
-.photo_col
-  img
-    margin-left: auto
-    margin-right: auto
 
 .onscroll
   position: absolute
