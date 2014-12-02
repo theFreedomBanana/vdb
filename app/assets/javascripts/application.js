@@ -23,9 +23,8 @@ $(document).ready(function() {
 
 	// show the navbar when scrolling below half homepage
 	$(document).scroll(function() {
-		var navbar = $("#header").offset();
-		var navbartop = navbar.top;
-		if (navbartop < 420) {
+		var navbartop = $("#header").offset().top;
+		if (navbartop < 320) {
 			$("#header").hide();
 		}
 		else {

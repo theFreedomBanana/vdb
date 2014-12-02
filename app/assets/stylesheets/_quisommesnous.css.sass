@@ -1,0 +1,46 @@
+@import "variables"
+
+// "Qui sommes nous", 2ème page
+#quisommesnous
+  background-image: url(background/quisommesnous_image.jpg)
+  top: 100%
+
+#logo_jb
+  margin-right: auto
+  margin-left: auto
+  margin-top: 5%
+
+.plus
+  margin-right: auto
+  margin-left: auto
+  cursor: pointer
+
+.moins
+  margin-right: auto
+  margin-left: auto
+  cursor: pointer
+
+.yellowblock
+  display: none
+  background-color: rgba(255, 207, 0, 0.8)
+  padding-top: 10px
+  padding-bottom: 10px
+  // Les padding left/right supprime une marge à droite créé avec un bloc prenant toute la paqge 
+  padding-left: 15px !important
+  padding-right: 15px !important
+
+  .col-xs-8, .col-xs-4
+    margin-top: 15px
+
+  #barre_grise
+    border-top: 2px dotted $white-text
+    padding-bottom: 10px
+
+@media all and (max-width: 600px)
+  #logo_jb
+    // width: 70%
+    // height: 70%
+
+  .plus, .moins
+    width: 20%
+    height: 20%

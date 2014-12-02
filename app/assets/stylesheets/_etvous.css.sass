@@ -1,0 +1,64 @@
+@import "variables"
+
+// "etvous", 6ème page
+#etvous
+  background-image: url(background/etvous_image.jpg)
+  top: 500%
+
+  .block_text
+    background-color: black
+
+.pblanc
+  color: $white-text
+
+.pjaune
+  color: rgba(255, 207, 0, 1)
+
+// disable Bootstrap padding and margin 
+@media all and (min-width: 992px)
+  .full_width_container
+    padding-left: 0px !important
+    padding-right: 0px !important
+    width: auto !important
+    min-width: 0 !important
+
+    .full_width_row
+      margin-left: 0px !important
+      margin-right: 0px !important
+      padding-left: 0px !important
+      padding-right: 0px !important
+
+  #block_col12
+    padding-left: 0px !important
+    padding-right: 0px !important
+    height: 540px
+    line-height: 540px
+    text-align: center
+
+    .block_text
+      width: 33%
+      height: 30% 
+      vertical-align: middle
+      display: inline-block
+      line-height: normal
+      text-align: left
+      float: none
+
+      h5
+        margin-top: 30px
+        margin-bottom: 20px
+
+@media all and (max-width: 992px)
+  .block_text1
+    margin-top: 100px
+
+  .block_text
+    margin-bottom: 2px
+
+@media all and (max-height: 400px)
+  .block_text1
+    margin-top: 40px !important
+
+@media all and (max-width: 500px) and (min-height: 600px)
+  .block_text1
+    margin-top: 150px !important
