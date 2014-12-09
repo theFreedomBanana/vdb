@@ -20,6 +20,7 @@
 $(document).ready(function() {
 	$(".moins").hide();
 	$("#header").hide();
+	$(".image2").hide();
 
 	// show the navbar when scrolling below half homepage
 	$(document).scroll(function() {
@@ -60,15 +61,6 @@ $(document).ready(function() {
 		$('#yb2').slideUp("slow").promise().then(shrinkYb2);
 	});
 
-
-	// black tile on photos on 'nos projets' when hover
-	$('.photo_col').mouseover(function() {
-		$(this).find('.onscroll').addClass("shadow");
-	});
-	$('.photo_col').mouseout(function() {
-		$('.onscroll').removeClass("shadow");
-	});
-
 	// set the navbar above each page when hyperlink clicked
 	var offset = 55;
 	$('.navbar li a').click(function(event) {
@@ -77,6 +69,25 @@ $(document).ready(function() {
 		scrollBy(0, -offset);
 	});
 
+	if (window.matchMedia("(min-width: 1100px)").matches) {
+		$('.onscroll').mouseover(function() {
+			var image1 = "#";
+			var image2 = "#";
+			image1 += $(this).next().attr('id');
+			image2 += $(image1).next().attr('id');
+			$(image2).show();
+			$(image1).hide();
+		});
+
+		$('.onscroll').mouseout(function() {
+			var image1 = "#";
+			var image2 = "#";
+			image1 += $(this).next().attr('id');
+			$(image1).show();
+			image2 += $(image1).next().attr('id');
+			$(image2).hide();
+		});
+	}
 });
 
 
@@ -88,7 +99,7 @@ function enlargeYb1()
 	var quiSommesNousHeight= $('#quisommesnous .yellowblock').height() + $('#quisommesnous .container').height();
 	var diff = quiSommesNousHeight - $('#quisommesnous').height();
 	if ( quiSommesNousHeight < $('#quisommesnous').height() ) {
-		$('#quisommesnous .yellowblock').css('height', '100%')
+		$('#quisommesnous .yellowblock').css('height', '100%');
 			} else {
 			$('#quisommesnous').css('height', quiSommesNousHeight + 'px');
 			for (var index in classesCss = ['#nosprojets', '#nosactions', '#presse', '#etvous', '#souteneznous']){
@@ -104,15 +115,15 @@ function shrinkYb1()
 	$('#quisommesnous').height(regularHeight);
 	for (var index in classesCss = ['#nosprojets', '#nosactions', '#presse', '#etvous', '#souteneznous']){
 		$(classesCss[index]).css('top', ($(classesCss[index]).offset().top - diff) + 'px');
-	};
-};
+	}
+}
 
 function enlargeYb2()
 {
 	var nosActionsHeight = $('#nosactions .yellowblock').height() + $('#nosactions .container').height();
 	var diff = nosActionsHeight - $('#nosactions').height();
 	if ( nosActionsHeight < $('#nosactions').height() ) {
-		$('#nosactions .yellowblock').css('height', '100%')
+		$('#nosactions .yellowblock').css('height', '100%');
 			} else {
 			$('#nosactions').css('height', nosActionsHeight + 'px');
 			for (var index in classesCss = ['#presse', '#etvous', '#souteneznous']){
@@ -128,5 +139,5 @@ function shrinkYb2()
 	$('#nosactions').height(regularHeight);
 	for (var index in classesCss = ['#presse', '#etvous', '#souteneznous']){
 		$(classesCss[index]).css('top', ($(classesCss[index]).offset().top - diff) + 'px');
-	};
-};
+	}
+}
