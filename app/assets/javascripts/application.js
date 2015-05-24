@@ -69,25 +69,6 @@ $(document).ready(function() {
 		scrollBy(0, -offset);
 	});
 
-	if (window.matchMedia("(min-width: 1100px)").matches) {
-		$('.onscroll').mouseover(function() {
-			var image1 = "#";
-			var image2 = "#";
-			image1 += $(this).next().attr('id');
-			image2 += $(image1).next().attr('id');
-			$(image2).show();
-			$(image1).hide();
-		});
-
-		$('.onscroll').mouseout(function() {
-			var image1 = "#";
-			var image2 = "#";
-			image1 += $(this).next().attr('id');
-			$(image1).show();
-			image2 += $(image1).next().attr('id');
-			$(image2).hide();
-		});
-	}
 });
 
 

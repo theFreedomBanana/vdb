@@ -3,30 +3,21 @@
 		.row
 			.col-xs-12.col-md-8.col-md-offset-2.page_title
 				%h2 DES ACTIONS ARTISTIQUES, DES RÉSULTATS SOLIDAIRES
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-1.photo_col
-				%span.onscroll
-				= image_tag("projets/mairie.jpg", :id => "projet_mairie", :class =>"img-responsive", :alt =>"mairie", 'data-hover' => image_path("projets/Projet1.jpg"))
-				= image_tag("projets/mairie2.jpg", :id => "projet_mairie2", :class =>"img-responsive image2", :alt =>"projet mairie details")
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-0.photo_col
-				%span.onscroll
-				= image_tag("projets/emmaus.jpg", :id => "projet_emmaus", :class =>"img-responsive", :alt =>"emmaus")
-				= image_tag("projets/emmaus2.jpg", :id => "projet_emmaus2", :class =>"img-responsive image2", :alt =>"projet Emmaus 2")
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-0.photo_col
-				%span.onscroll
-				= image_tag("projets/zebre.jpg", :id => "projet_zebre", :class =>"img-responsive", :alt =>"zebre")
-				= image_tag("projets/zebre2.jpg", :id => "projet_zebre2", :class =>"img-responsive image2", :alt =>"Projet3")
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-0.photo_col
-				%span.onscroll
-				= image_tag("projets/104.jpg", :id => "projet_104", :class =>"img-responsive", :alt =>"104")
-				= image_tag("projets/104bis.jpg", :id => "projet_104bis", :class =>"img-responsive image2", :alt =>"projet 104 details")
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-0.photo_col
-				%span.onscroll
-				= image_tag("projets/desidero.jpg", :id => "projet_desidero", :class =>"img-responsive", :alt =>"desidero")
-				= image_tag("projets/desidero2.jpg", :id => "projet_desidero2", :class =>"img-responsive image2", :alt =>"Projet5")
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-1.photo_col
-				%span.onscroll
-				= image_tag("projets/200.jpg", :id => "projet_200", :class =>"img-responsive", :alt =>"200")
-				= image_tag("projets/200bis.jpg", :id => "projet_200bis", :class =>"img-responsive image2", :alt =>"projet 200 details")
-			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-2.col-md-offset-0.photo_col
+			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-6.col-md-offset-0.photo_col
+				%span
+				= link_to image_tag("projets/mairie.jpg", :id => "projet_mairie", :class =>"img-responsive", :alt =>"mairie"), 'http://www.evenements.vuesdenbas.fr/exposition/?a=detailsExpo&expoID=5', :target => 'blank'
+			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-0.photo_col
+				%span
+				= link_to image_tag("projets/emmaus.jpg", :id => "projet_emmaus", :class =>"img-responsive", :alt =>"emmaus"), 'http://www.evenements.vuesdenbas.fr/exposition/?a=detailsExpo&expoID=5', :target => 'blank'
+			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-0.photo_col
+				%span
+				= link_to image_tag("projets/zebre.jpg", :id => "projet_zebre", :class =>"img-responsive", :alt =>"zebre"), 'https://www.flickr.com/photos/131669337@N08/sets/72157650777801513', :target => "blank"
+			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-0.photo_col
+				%span
+				= link_to image_tag("projets/desidero.jpg", :id => "projet_desidero", :class =>"img-responsive", :alt =>"desidero"), 'http://www.evenements.vuesdenbas.fr/exposition/?a=detailsExpo&expoID=7', :target => "blank"
+			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-0.photo_col
+				%span
+				= link_to image_tag("projets/200.jpg", :id => "projet_200", :class =>"img-responsive", :alt =>"200"), 'https://www.flickr.com/photos/131669337@N08/sets/72157653034972746', :target => "blank"
+			.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-0.photo_col
 				%span
 				= image_tag("projets/asuivre.jpg", :id => "projet_asuivre", :class =>"img-responsive", :alt =>"asuivre")
