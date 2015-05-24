@@ -5,12 +5,29 @@
   background-image: url(background/souteneznous_image.jpg)
   top: 600%
 
+  .button_image
+    margin-left: auto
+    margin-right: auto
+
+  .button_image:hover
+    background-color: rgba(20, 20, 20, 0.2)
+
+  @media all and (min-width: 320px)
+    #block_col12
+      margin-top: 90px
+
+  @media all and (max-width: 319px)
+    #block_col12
+      margin-top: 60px
+  
   @media all and (min-width: 992px)
     #block_adherer
       margin-top: -170px
+    .button_image
+      margin-bottom: 10px
 
   @media all and (max-width: 992px)
-    .block_text1
+    .block_donner
       margin-top: 40px !important
   
   @media all and (max-height: 600px)
@@ -21,7 +38,7 @@
       padding-right: 0px !important
 
   @media all and (max-height: 500px) and (max-width: 600px)
-    .block_text1
+    .block_donner
       margin-top: 0px !important
 
     h2
