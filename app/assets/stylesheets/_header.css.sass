@@ -1,6 +1,10 @@
 @import "variables"
 
 /* Header style */
+.navbar-default .navbar-nav > .active > a
+  background-color: black !important
+  color: white !important
+
 #header
   background-color: #000001
   border-color: #000001
@@ -22,25 +26,59 @@
     color: white !important
     text-decoration: underline
 
-#header_logo
-  position: fixed
-  top: 1px
-  left: 0px !important
-  height: 55px
-  float: left
-
-.navbar-default .navbar-nav > .active > a
-  background-color: black !important
-  color: white !important
-
-@media all and (max-width: 1069px)
   #header_logo
-    height: 50px
-    left: -15px !important
+    position: fixed
+    top: 1px
+    left: 0px !important
+    height: 55px
+    float: left
 
-@media all and (max-height: 600px)
-  #header-navbar-collapse
-    a
-      font-size: 0.8em !important
-      padding-top: 0px !important
-      padding-bottom: 0px !important
+  @media all and (max-width: 1069px)
+    #header_logo
+      height: 50px
+      left: -15px !important
+
+  @media all and (max-width: 1100px)
+    #header-navbar-collapse
+      a
+        font-size: 1em !important
+        padding-top: 8px !important
+
+  @media all and (max-width: 910px)
+    #header-navbar-collapse
+      a
+        padding-left: 5px !important
+        padding-right: 5px !important
+
+  @media all and (max-width: 600px)
+    #header-navbar-collapse
+      a
+        line-height: 14px
+
+  @media all and (max-width: 600px)
+    #header-navbar-collapse
+      a
+        padding-top: 0px !important
+        padding-bottom: 0px !important
+        line-height: 14px
+
+  @media all and (max-height: 600px)
+    #header-navbar-collapse
+      a
+        line-height: 14px
+
+  @media all and (max-width: 600px) and (max-height: 350px)
+    #header-navbar-collapse
+      a
+        font-size: 0.6em !important
+        padding-top: 0px !important
+        padding-bottom: 0px !important
+        line-height: 14px
+
+  @media all and (max-width: 350px) and (max-height: 600px)
+    #header-navbar-collapse
+      a
+        font-size: 0.6em !important
+        padding-top: 0px !important
+        padding-bottom: 0px !important
+        line-height: 14px
