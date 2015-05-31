@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
 # Use HAML and replace erb template with haml
 gem "haml-rails"
 #use Bootsrap v 3.2

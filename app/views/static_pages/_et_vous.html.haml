@@ -3,14 +3,14 @@
 		.row.full_width_row
 			.col-xs-8.col-xs-offset-2.col-sm-12.col-sm-offset-0#block_col12
 				.col-xs-12.col-md-4.block_text.block_text1
-					%h5 CHERCHE STAGIAIRE
-					%p.pblanc Community management, rédactionnel, événementiel
-					%p.pjaune Stage de 1 semaine a 2 mois
+					%h5=@blackblock1.title.upcase
+					%p.pblanc=@blackblock1.white_text
+					%p.pjaune=@blackblock1.yellow_text
 				.col-xs-12.col-md-4.block_text
-					%h5 APPEL À PROJET
-					%p.pblanc Une idée ?
-					%p.pjaune On vous attends ?
+					%h5=@blackblock2.title.upcase
+					%p.pblanc=@blackblock2.white_text
+					%p.pjaune=@blackblock2.yellow_text
 				.col-xs-12.col-md-4.block_text
-					%h5 ORGANISATION DE MARAUDE
-					%p.pblanc Distribution de cafés et sandwichs pour les personnes vivant dans la rue > à Venir
-					%p.pjaune Bénévoles
+					%h5=@blackblock3.title.upcase
+					%p.pblanc=@blackblock3.white_text
+					%p.pjaune=@blackblock3.yellow_text
