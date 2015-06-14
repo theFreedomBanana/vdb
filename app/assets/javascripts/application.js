@@ -19,17 +19,17 @@
 
 $(document).ready(function() {
 	$(".moins").hide();
-	$("#header").hide();
+	$("#navbar").hide();
 	$(".image2").hide();
 
 	// show the navbar when scrolling below half homepage
 	$(document).scroll(function() {
-		var navbartop = $("#header").offset().top;
+		var navbartop = $("#navbar").offset().top;
 		if (navbartop < 320) {
-			$("#header").hide();
+			$("#navbar").hide();
 		}
 		else {
-			$("#header").show();
+			$("#navbar").show();
 		}
 	});
 
