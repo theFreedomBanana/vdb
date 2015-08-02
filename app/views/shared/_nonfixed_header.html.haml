@@ -1,0 +1,25 @@
+%nav#navbar.navbar.navbar-default{:role => "navigation"}
+  .container
+    %a{:href => "/#home"}= image_tag("logos/logo_blanc.png", :id =>"header_logo", :class =>"img-responsive", :alt =>"logo_vdb")
+    .navbar-header
+      %button{:type => "button", :class => "navbar-toggle collapsed", :"data-toggle" => "collapse", :"data-target" => "#header-navbar-collapse"}
+        %span{:class => "sr-only"} Toggle navigation
+        %span{:class => "icon-bar"}
+        %span{:class => "icon-bar"}
+        %span{:class => "icon-bar"}
+
+    
+    .collapse.navbar-collapse#header-navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a.liens.active{:href => "/#quisommesnous"} QUI SOMMES NOUS
+        %li
+          %a.liens.active{:href => "/#nosprojets"} NOS PROJETS
+        %li
+          %a.liens.active{:href => "/#nosactions"} NOS ACTIONS
+        %li
+          %a.liens.active{:href => "/#presse"} PRESSE
+        %li
+          %a.liens.active{:href => "/#etvous"} ET VOUS
+        %li
+          %a.liens.active{:href => "/#souteneznous"} SOUTENEZ NOUS
