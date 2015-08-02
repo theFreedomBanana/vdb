@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+# Simple helper providing an HTML select list of countries
+gem 'country_select', github: 'stefanpenner/country_select'
 # Use HAML and replace erb template with haml
 gem "haml-rails"
 #use Bootsrap v 3.2
@@ -32,6 +34,7 @@ group :development do
 	gem 'spring'
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+	gem 'pry-rails'
 end
 
 group :production do
