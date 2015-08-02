@@ -1,0 +1,35 @@
+%section
+  .container
+    .row
+      .col-xs-12.col-sm-5.col-sm-offset-1
+        %h2 MON MONTANT
+      .col-xs-12.col-sm-5
+        %h2 MES COORDONNÉES
+        #details_form
+          = form_for @adherent do |f|
+            %div= label_tag(:email, "Email")
+            %div= f.text_field :email
+            %span= check_box_tag(:company)
+            = label_tag(:company, "Je fais un don au nom d'une organisation ou d'une société")
+            %div Civilité
+            = radio_button_tag(:gender, "Female")
+            = label_tag(:gender_Female, "Madame")
+            = radio_button_tag(:gender, "Male")
+            = label_tag(:gender_Male, "Monsieur")
+            %div= label_tag(:firstname, "Prénom")
+            %div= f.text_field :firstname
+            %div= label_tag(:lastname, "Nom de famille")
+            %div= f.text_field :lastname
+            %div= label_tag(:address, "Adresse postale")
+            %div= f.text_field :address
+            %div= label_tag(:additional_address_details, "Complément d'adresse")
+            %div= f.text_field :additional_address_details
+            .col-xs-5
+              %div= label_tag(:zipcode, "Code postale")
+              %div= f.text_field :zipcode
+            .col-xs-7
+              %div#city= label_tag(:city, "Ville")
+              %div= f.text_field :city
+            %div#country= label_tag(:country, "Pays")
+            %div= f.text_field :country
+            %div= f.submit "Create"
