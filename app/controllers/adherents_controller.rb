@@ -3,6 +3,7 @@ class AdherentsController < ApplicationController
 
 	def new
     @adherent = Adherent.new
+    @adherent.subscriptions.build
     # respond_with(@adherent)
     render layout: "details"
   end
@@ -16,6 +17,9 @@ class AdherentsController < ApplicationController
       @adherent.company = "no"
     end
     @adherent.save
+    s = @adherent.subscriptions.create(subscription_params)
+    s.ends_at = s.created_at.next_year
+    s.save
   	redirect_to :back
 	end
 
@@ -23,4 +27,9 @@ class AdherentsController < ApplicationController
   	params.require(:adherent).permit(:email, :firstname ,:lastname, 
     :address, :additional_address_details, :zipcode, :city, :country)
   end
+
+  def subscription_params
+    params.require(:adherent)[:subscriptions].permit(:amount)
+  end
+
 end
