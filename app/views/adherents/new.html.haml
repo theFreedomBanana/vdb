@@ -1,12 +1,18 @@
 %section
   .container
     .row
-      .col-xs-12.col-sm-5.col-sm-offset-1
-        %h2 MON MONTANT
-      .col-xs-12.col-sm-5
-        %h2 MES COORDONNÉES
-        #details_form
-          = form_for @adherent do |f|
+      #details_form
+        = form_for @adherent do |f|
+          .col-xs-12.col-md-5.col-md-offset-1
+            %h2 MON MONTANT
+            %h3 J'ADHÈRE POUR 1 AN
+            = f.fields_for :subscriptions do |subscriptions_form|
+              = subscriptions_form.label :amount
+              = subscriptions_form.text_field :amount
+            %p En donnant chaque année, je deviens membre et donateur de Vues d'en Bas pour une durée de 1 an et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
+
+          .col-xs-12.col-md-5
+            %h2 MES COORDONNÉES
             %div= label_tag(:email, "Email")
             %div= f.text_field :email
             %span= check_box_tag(:company)
@@ -31,5 +37,11 @@
               %div#city= label_tag(:city, "Ville")
               %div= f.text_field :city
             %div#country= label_tag(:country, "Pays")
-            %div= f.text_field :country
-            %div= f.submit "Create"
+            %div= f.country_select(:country, priority_countries: ["FR","GB", "DE"])
+            %div= f.submit "Adhérer"
+
+          .col-xs-12.col-md-5.col-md-offset-1
+            %p VOS DONS  servirons à financer les Maraudes, l'achat de vêtements, de nourriture, de fournitures pour les personnes sans abris, les frais liés aux évènements artistiques (Hors vernissages), les frais de l'association qui ne compte pas d'employés (bénévoles uniquement).
+            %br
+            %p Vos coordonnées sont nécessaires au traitement de vos dons. Elles restent strictement confidentielles et ne sont ni échangées ni louées à des tiers. 
+            Conformément à la loi informatique et Libertés du 6 janvier 1978, vos disposez en vous adressant au siège de Vues d'en Bas, d'un droit d'accès, de rectification et d'opposition aux informations vous concernant. 
