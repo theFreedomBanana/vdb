@@ -15,12 +15,12 @@
             %h2 MES COORDONNÉES
             %div= label_tag(:email, "Email")
             %div= f.text_field :email
-            %span= check_box_tag(:company)
+            %span= f.check_box(:company)
             = label_tag(:company, "Je fais un don au nom d'une organisation ou d'une société")
             %div Civilité
-            = radio_button_tag(:gender, "Female")
+            = f.radio_button(:gender, "Female")
             = label_tag(:gender_Female, "Madame")
-            = radio_button_tag(:gender, "Male")
+            = f.radio_button(:gender, "Male")
             = label_tag(:gender_Male, "Monsieur")
             %div= label_tag(:firstname, "Prénom")
             %div= f.text_field :firstname

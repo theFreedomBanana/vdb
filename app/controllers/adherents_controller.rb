@@ -10,12 +10,6 @@ class AdherentsController < ApplicationController
 
   def create
     @adherent = Adherent.new(adherent_params)
-    @adherent.gender = params[:gender]
-    if params[:company] == "1"
-      @adherent.company = "yes"
-    else
-      @adherent.company = "no"
-    end
     @adherent.save
     s = @adherent.subscriptions.create(subscription_params)
     s.ends_at = s.created_at.next_year
@@ -23,13 +17,15 @@ class AdherentsController < ApplicationController
   	redirect_to :back
 	end
 
-	def adherent_params
-  	params.require(:adherent).permit(:email, :firstname ,:lastname, 
-    :address, :additional_address_details, :zipcode, :city, :country)
-  end
+  private
 
-  def subscription_params
-    params.require(:adherent)[:subscriptions].permit(:amount)
-  end
+	 def adherent_params
+    	params.require(:adherent).permit(:email, :company, :gender, :firstname ,:lastname, 
+      :address, :additional_address_details, :zipcode, :city, :country)
+    end
+
+    def subscription_params
+      params.require(:adherent)[:subscriptions].permit(:amount)
+    end
 
 end
