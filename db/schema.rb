@@ -61,6 +61,21 @@ ActiveRecord::Schema.define(version: 20150804192502) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "donors", force: true do |t|
+    t.string   "email"
+    t.boolean  "company"
+    t.string   "gender"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "address"
+    t.string   "additional_address_details"
+    t.integer  "zipcode"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "etvous", force: true do |t|
     t.string   "title"
     t.string   "white_text"
