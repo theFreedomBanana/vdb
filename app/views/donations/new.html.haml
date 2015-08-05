@@ -1,0 +1,45 @@
+%section
+  .container
+    .row
+      #details_form
+        = form_tag({controller: "donations", action: "create"}, method: "post") do
+          .col-xs-12.col-md-5.col-md-offset-1
+            %h2 MON MONTANT
+            %h3 DONNATION
+            %div= label_tag(:amount, "Montant libre")
+            = text_field_tag :amount
+
+            %p Mon soutien servira à soutenir l'ensemble des actions de Vues d'en Bas.
+            %p VOS DONS servirons à financer les Maraudes, l'achat de vêtements, de nourriture, de fournitures pour les personnes sans abris, les frais liés aux évènements artistiques (Hors vernissage), les frais de l'association qui ne compte pas d'employés (bénévoles uniquement).
+            %p Vos coordonnées sont nécessaires au traitement de vos dons. Elles restent strictement confidentielles et ne sont ni échangées ni louées à des tiers.
+            %br
+            %p Conformément à la loi Informatique et Libertés du 6 janvier 1978, vous disposez en vous adressant au siège de Vues d'en Bas, d'un droit d'accès, de rectification et d'opposition aux informations vous concernant. 
+
+          .col-xs-12.col-md-5
+            %h2 MES COORDONNÉES
+            %div= label_tag(:email, "Email")
+            %div= text_field_tag :email
+            %span= check_box_tag(:company)
+            = label_tag(:company, "Je fais un don au nom d'une organisation ou d'une société")
+            %div Civilité
+            = radio_button_tag(:gender, "Female")
+            = label_tag(:gender_Female, "Madame")
+            = radio_button_tag(:gender, "Male")
+            = label_tag(:gender_Male, "Monsieur")
+            %div= label_tag(:firstname, "Prénom")
+            %div= text_field_tag :firstname
+            %div= label_tag(:lastname, "Nom de famille")
+            %div= text_field_tag :lastname
+            %div= label_tag(:address, "Adresse postale")
+            %div= text_field_tag :address
+            %div= label_tag(:additional_address_details, "Complément d'adresse")
+            %div= text_field_tag :additional_address_details
+            .col-xs-5
+              %div= label_tag(:zipcode, "Code postale")
+              %div= text_field_tag :zipcode
+            .col-xs-7
+              %div#city= label_tag(:city, "Ville")
+              %div= text_field_tag :city
+            %div#country= label_tag(:country, "Pays")
+            %div= country_select("", :country, selected: "FR")
+            %div= submit_tag "Valider"
