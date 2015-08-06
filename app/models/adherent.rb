@@ -6,12 +6,12 @@ class Adherent < ActiveRecord::Base
 		permit_params :email, :company, :gender, :firstname, :lastname,
 									:address, :additional_address_details, :zipcode,
 									:city, :country, :created_at
-		actions :all, except: [:destroy] 
+		actions :all
 	end
 
 	ActiveAdmin.register Subscription do
 		permit_params :amount, :ends_at 
-		actions :all, except: [:destroy]
+		actions :all
 	end
 
 end
