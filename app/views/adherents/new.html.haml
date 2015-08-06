@@ -7,8 +7,8 @@
             %h2 MON MONTANT
             %h3 J'ADHÈRE POUR 1 AN
             = f.fields_for :subscriptions do |subscriptions_form|
-              = subscriptions_form.label :amount
-              = subscriptions_form.text_field :amount
+              = subscriptions_form.label :subscription_amount
+              = subscriptions_form.text_field :subscription_amount
             %p En donnant chaque année, je deviens membre et donateur de Vues d'en Bas pour une durée de 1 an et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
 
           .col-xs-12.col-md-5

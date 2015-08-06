@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806182650) do
+ActiveRecord::Schema.define(version: 20150806184200) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20150806182650) do
   end
 
   create_table "subscriptions", force: true do |t|
-    t.integer  "amount"
+    t.integer  "subscription_amount"
     t.datetime "ends_at"
     t.datetime "created_at"
     t.datetime "updated_at"
