@@ -12,6 +12,8 @@ end
     index do
       column :id
       column :adherent_id
+      column :subscription_amount
+      column :monthly
       column :created_at
       column :ends_at
       actions
