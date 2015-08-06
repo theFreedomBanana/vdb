@@ -20,7 +20,7 @@ class AdherentsController < ApplicationController
 	 def adherent_params
     	params.require(:adherent).permit(:email, :company, :gender, :firstname ,:lastname, 
       :address, :additional_address_details, :zipcode, :city, :country, 
-      subscriptions_attributes: [:amount, :id, :_destroy])
+      subscriptions_attributes: [:subscription_amount, :id, :_destroy])
     end
 
 end
