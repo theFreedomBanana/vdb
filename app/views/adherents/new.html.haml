@@ -7,20 +7,20 @@
             %h2 MON MONTANT
             %h3 J'ADHÈRE POUR 1 AN
             = f.fields_for :subscriptions do |subscriptions_form|
-              = subscriptions_form.label :amount
-              = subscriptions_form.text_field :amount
+              = subscriptions_form.label :subscription_amount
+              = subscriptions_form.text_field :subscription_amount
             %p En donnant chaque année, je deviens membre et donateur de Vues d'en Bas pour une durée de 1 an et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
 
           .col-xs-12.col-md-5
             %h2 MES COORDONNÉES
             %div= label_tag(:email, "Email")
             %div= f.text_field :email
-            %span= check_box_tag(:company)
+            %span= f.check_box(:company)
             = label_tag(:company, "Je fais un don au nom d'une organisation ou d'une société")
             %div Civilité
-            = radio_button_tag(:gender, "Female")
+            = f.radio_button(:gender, "Female")
             = label_tag(:gender_Female, "Madame")
-            = radio_button_tag(:gender, "Male")
+            = f.radio_button(:gender, "Male")
             = label_tag(:gender_Male, "Monsieur")
             %div= label_tag(:firstname, "Prénom")
             %div= f.text_field :firstname

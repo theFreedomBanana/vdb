@@ -1,24 +1,23 @@
-ActiveAdmin.register Adherent do
+ActiveAdmin.register Donor do
 
-	sidebar "Adherents Details", only: [:show, :edit] do
+sidebar "Donors Details", only: [:show, :edit] do
     ul do
-      li link_to "Subscriptions", admin_adherent_subscriptions_path(adherent)
+      li link_to "Donations", admin_donor_donations_path(donor)
     end
   end
 end
 
-	ActiveAdmin.register Subscription do
-  	belongs_to :adherent, :optional => true
+	ActiveAdmin.register Donation do
+  	belongs_to :donor, :optional => true
     index do
       column :id
-      column :adherent_id
-      column :subscription_amount
-      column :monthly
+      column :donor_id
+      column :donation_amount
       column :created_at
-      column :ends_at
       actions
     end
   end
+
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

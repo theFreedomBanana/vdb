@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'application#index'
   resources :adherents, only: [:new, :create]
 
+  get 'donations' => 'donations#new'
+  post 'donations' => 'donations#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
