@@ -5,10 +5,14 @@ Rails.application.routes.draw do
 
   resources :adherents, only: [:new, :create], :path => "adhesions"
   resources :donations, only: [:new, :create]
-  resources :articles, only: [:index]
-
-  get 'donations' => 'donations#new'
-  post 'donations' => 'donations#create'
+  resources :articles do
+    collection do
+      get 'vuesdenbaslexpo/affiches' => 'articles#affiches_lexpo'
+      get 'vuesdenbaslexpo/photos' => 'articles#photos_lexpo'
+      get 'vuesdenbaslexpo/posters' => 'articles#posters_lexpo'
+      get '200for141500/photos' => 'articles#photos_deuxcent'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
