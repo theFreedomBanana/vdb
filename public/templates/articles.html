@@ -1,0 +1,35 @@
+<div id="articles_page" class="container">
+	<div class="row">
+
+		<div class="col-xs-12 col-md-3">
+			<h2>VUE D'EN BAS L'EXPO</h1>
+			<p>Qu'aimeriez-vous voir depuis votre fenêtre ?</p>
+			<ul>
+				<a href="" ng-click="changeUrl('vuesdenbaslexpo/affiches')">
+					<li class="{{colored1}}">- LES AFFICHES ORIGINALES</li>
+				</a>
+				<a href="" ng-click="changeUrl('vuesdenbaslexpo/photos')">
+					<li class="{{colored2}}">- LES PHOTOS</li>
+				</a>
+				<a href="" ng-click="changeUrl('vuesdenbaslexpo/posters')">
+					<li class="{{colored3}}">- LES POSTERS</li>
+				</a>
+			</ul>
+			<h2>200 FOR 141 500</h2>
+			<ul>
+				<a href="" ng-click="changeUrl('200for141500/photos')">
+					<li class="{{colored4}}">- LES PHOTOS</li>
+				</a>
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-md-9">
+			<ul ng-repeat="photo in photos">
+				<li class={{columns}} class="area">
+					<img ng-src="assets/articles/{{photo.name}}.jpg" class="img-responsive"></img>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</div>

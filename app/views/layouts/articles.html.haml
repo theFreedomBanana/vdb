@@ -1,12 +1,12 @@
 !!! 5
-%html
+%html{'ng-app' => 'vuesDenBas'}
 	%head
-	%title= "Vues d'en bas"
-	%meta{ :name => "viewport", :content => "width=device-width, initial-scale=1"}
-	= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+	%base{:href => '/'}
+	%title FilterApp
+	= stylesheet_link_tag    'application', media: 'all'
+	= javascript_include_tag 'application'
 	= csrf_meta_tags
-
-	%body#items
+	%body#articles
 		=render "shared/nonfixed_header"
-		=yield
+		%div{'ng-view' =>''}
 		=render "shared/footer"

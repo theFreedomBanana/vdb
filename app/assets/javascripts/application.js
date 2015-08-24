@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require mailcheck.min
+//= angular/angular.min
+//= angular/angular-route.min
+//= angular/angular-resource.min
+//= angular/main
+//= require_tree .
 //= require bootstrap
 //= require_tree .
 
