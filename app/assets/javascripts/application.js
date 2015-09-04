@@ -24,17 +24,17 @@
 
 $(document).ready(function() {
 	$(".moins").hide();
-	$("#navbar").hide();
+	$("#hidden_navbar").hide();
 	$(".image2").hide();
 
 	// show the navbar when scrolling below half homepage
 	$(document).scroll(function() {
-		var navbartop = $("#navbar").offset().top;
+		var navbartop = $("#hidden_navbar").offset().top;
 		if (navbartop < 320) {
-			$("#navbar").hide();
+			$("#hidden_navbar").hide();
 		}
 		else {
-			$("#navbar").show();
+			$("#hidden_navbar").show();
 		}
 	});
 
