@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820162408) do
+ActiveRecord::Schema.define(version: 20150824113447) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -71,6 +71,21 @@ ActiveRecord::Schema.define(version: 20150820162408) do
     t.string   "expo"
   end
 
+  create_table "customers", force: true do |t|
+    t.string   "email"
+    t.boolean  "company"
+    t.string   "gender"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "address"
+    t.string   "additional_address_details"
+    t.integer  "zipcode"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "donations", force: true do |t|
     t.integer  "donation_amount"
     t.integer  "donor_id"
@@ -100,6 +115,23 @@ ActiveRecord::Schema.define(version: 20150820162408) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "orders", force: true do |t|
+    t.integer  "amount"
+    t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders_articles", id: false, force: true do |t|
+    t.integer  "order_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders_articles", ["article_id"], name: "index_orders_articles_on_article_id"
+  add_index "orders_articles", ["order_id"], name: "index_orders_articles_on_order_id"
 
   create_table "subscriptions", force: true do |t|
     t.integer  "subscription_amount"
