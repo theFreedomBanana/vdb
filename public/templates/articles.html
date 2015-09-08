@@ -1,35 +1,48 @@
-<div id="articles_page" class="container">
-	<div class="row">
-
-		<div class="col-xs-12 col-md-3">
-			<h2>VUE D'EN BAS L'EXPO</h1>
-			<p>Qu'aimeriez-vous voir depuis votre fenêtre ?</p>
-			<ul>
-				<a href="" ng-click="changeUrl('vuesdenbaslexpo/affiches')">
-					<li class="{{colored1}}">- LES AFFICHES ORIGINALES</li>
-				</a>
-				<a href="" ng-click="changeUrl('vuesdenbaslexpo/photos')">
-					<li class="{{colored2}}">- LES PHOTOS</li>
-				</a>
-				<a href="" ng-click="changeUrl('vuesdenbaslexpo/posters')">
-					<li class="{{colored3}}">- LES POSTERS</li>
-				</a>
-			</ul>
-			<h2>200 FOR 141 500</h2>
-			<ul>
-				<a href="" ng-click="changeUrl('200for141500/photos')">
-					<li class="{{colored4}}">- LES PHOTOS</li>
-				</a>
-			</ul>
-		</div>
-
-		<div class="col-xs-12 col-md-9">
-			<ul ng-repeat="photo in photos">
-				<li class={{columns}} class="area">
-					<img ng-src="assets/articles/{{photo.name}}.jpg" class="img-responsive"></img>
-				</li>
-			</ul>
-		</div>
-
-	</div>
+<div class="col-xs-12 col-md-3">
+	<h4>VUE D'EN BAS L'EXPO</h4>
+	<p>Qu'aimeriez-vous voir depuis votre fenêtre ?</p>
+	<ul>
+		<a href="" ng-click="changeUrl('vuesdenbaslexpo/affiches')">
+			<li class="{{colored1}}">- LES AFFICHES ORIGINALES</li>
+		</a>
+		<a href="" ng-click="changeUrl('vuesdenbaslexpo/photos')">
+			<li class="{{colored2}}">- LES PHOTOS</li>
+		</a>
+		<a href="" ng-click="changeUrl('vuesdenbaslexpo/posters')">
+			<li class="{{colored3}}">- LES POSTERS</li>
+		</a>
+	</ul>
+	<h4>200 FOR 141 500</h4>
+	<ul>
+		<a href="" ng-click="changeUrl('200for141500/photos')">
+			<li class="{{colored4}}">- LES PHOTOS</li>
+		</a>
+	</ul>
+	
 </div>
+
+<form> <!-- Form inutile mais sans la 1ère photo est marging-bottom sans raison -->
+	<div class="col-xs-12 col-md-6">
+		<ul ng-repeat="photo in photos">
+			<li class={{columns}}>
+				<button type="button" class="btn btn-default plus" ng-click="add(photo)">+</button>
+				<img ng-src="assets/articles/{{photo.name}}.jpg" class="img-responsive image"></img>
+			</li>
+		</ul>
+	</div>
+</form>
+
+<div class="col-md-3">
+	<h4>Mon Panier : {{total | currency: '€'}}</h4>
+	<ul class="col-xs-12 items_in_basket" ng-repeat="item in basket track by $index">
+		<li>
+			<img ng-src="assets/articles/{{item.name}}.jpg" class="col-xs-5 img-responsive"></img>
+			<span class="col-xs-3">{{item.price | currency: '€'}}</span>
+			<span class="col-xs-4" ng-click="remove($index)"><button type="button" class="btn btn-default">-</button></span>
+		</li>
+	</ul>
+</div>
+
+<form action="orders/new" method="post" class="col-xs-1 col-xs-offset-11">
+	<button type="submit" class="btn">Valider</button>
+</form>

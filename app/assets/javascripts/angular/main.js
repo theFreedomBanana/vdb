@@ -1,6 +1,7 @@
 var vuesDenBas = angular.module('vuesDenBas', [
 	'ngRoute',
-	'articleController'
+	'articleController',
+	'basketService'
 	]);
 
 vuesDenBas.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
