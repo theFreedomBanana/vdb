@@ -26,7 +26,9 @@
 		<ul ng-repeat="photo in photos">
 			<li class={{columns}}>
 				<button type="button" class="btn btn-default plus" ng-click="add(photo)">+</button>
-				<img ng-src="assets/articles/{{photo.name}}.jpg" class="img-responsive image"></img>
+				<a href="assets/articles/{{photo.name}}.jpg" data-lightbox="oeuvres">
+					<img ng-src="assets/articles/{{photo.name}}.jpg" class="img-responsive image"></img>
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -44,5 +46,6 @@
 </div>
 
 <form action="orders/new" method="post" class="col-xs-1 col-xs-offset-11">
+	<input type="hidden" value={{basket}} name="panier">
 	<button type="submit" class="btn">Valider</button>
 </form>

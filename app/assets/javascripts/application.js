@@ -17,8 +17,8 @@
 //= angular/angular-route.min
 //= angular/angular-resource.min
 //= angular/main
-//= require_tree .
 //= require bootstrap
+//= require lightbox
 //= require_tree .
 
 
