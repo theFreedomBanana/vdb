@@ -2,10 +2,146 @@
 
 #jadhere
 	background-color: $yellow-text
-	
-	h1, h2, h3, h4, h5, h6
-		color: black
+	margin-top: 75px
 
-	#details_form
+	h2
+		background-color: black
+		color: $yellow-text
+
+	h3
+		color: white
+		margin-top: 0px
+		margin-bottom: 0px
+
+	.details_form
+
+		.jadhere_h3_col
+			float: none
+			margin-left: 45px
+
+		.jadhere_h3
+			text-align: left
+		
+		.subscription_bloc
+			margin-top: 10px
+	
+		#subscription_input_label
+			margin-left: 40px
+	
+		.subscription_input
+			width: calc(34% - 22px)
+	
+		.subscription_text
+			padding-top: 10px
+			clear: both
+	
+		#adherent_explain_text_for_md_screen
+			margin-top: 276px
+			font-size: 11px
+
+		.explanation_text_for_xs_screen
+			margin-top: 40px
+	
 		p
 			text-align: left
+	
+		.details_field
+			width: 100% !important
+
+		.company_label
+			display: inline
+		
+		.company_bloc, .gender_bloc, .firstname_bloc, .lastname_bloc, .address_bloc, .additional_address_bloc, .zip_n_city, .country_bloc
+			padding-top: 10px
+
+		.zip_n_city
+			padding-left: 0px
+			padding-right: 0px
+	
+		.country_bloc
+			clear: both
+
+		#adherent_country, #_country
+			display: block
+
+		.valider
+			margin-top: 20px
+
+		.asterisk_bloc
+			margin-top: 10px
+			padding-left: 0px
+
+	//resize h2 and h3
+	@media all and (max-width: 767px)
+		h2
+			font-size: 1.5em
+	@media all and (min-width: 768px) and (max-width: 850px)
+		h2
+			font-size: 2.1em
+	@media all and (max-width: 480px)
+		h3
+			font-size: 1.2em
+			padding-top: 5px
+	@media all and (min-width: 481px) and (max-width: 580px)
+		h3
+			font-size: 1.3em
+			padding-top: 5px
+	@media all and (min-width: 581px) and (max-width: 767px)
+		h3
+			font-size: 1.5em
+			padding-top: 5px
+
+
+	//change margin-left to subscription_input_label
+	@media all and (min-width: 581px) and (max-width: 991px)
+		#subscription_input_label
+			margin-left: 34px !important
+
+
+	//resize amount input
+	@media all and (max-width: 379px)
+		#subscription_input_label
+			margin-left: 10px !important
+		.subscription_input
+			width: calc(35% - 22px) !important
+	@media all and (min-width: 380px) and (max-width: 480px)
+		#subscription_input_label
+			margin-left: 10px !important
+		.subscription_input
+			width: calc(34% - 22px) !important
+	@media all and (min-width: 481px) and (max-width: 580px)
+		#subscription_input_label
+			margin-left: 30px !important
+		.subscription_input
+			width: calc(23% - 22px) !important
+	@media all and (min-width: 581px) and (max-width: 680px)
+		.subscription_input
+			width: calc(24% - 22px) !important
+	@media all and (min-width: 681px) and (max-width: 767px)
+		.subscription_input
+			width: calc(20% - 22px) !important
+	@media all and (min-width: 768px) and (max-width: 991px)
+		.subscription_input
+			width: calc(22% - 22px) !important
+
+
+	//resize text subscription, explanation_text, and asterix_bloc
+	@media all and (max-width: 359px)
+		.subscription_text, .asterisk_bloc
+			font-size: 0.8em
+	@media all and (min-width: 360px) and (max-width: 559px)
+		.subscription_text, .asterisk_bloc
+			font-size: 0.9em
+		.explanation_text_for_xs_screen
+			font-size: 0.8em
+	@media all and (min-width: 560px) and (max-width: 991px)
+		.subscription_text, .asterisk_bloc
+			font-size: 1em
+		.explanation_text_for_xs_screen
+			font-size: 0.9em
+
+
+	//resize the country_select
+	@media all and (max-width: 350px)
+		#adherent_country
+			width: 100%

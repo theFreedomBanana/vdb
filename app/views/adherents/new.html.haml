@@ -1,47 +1,69 @@
 %section
   .container
     .row
-      #details_form
+      .details_form
         = form_for @adherent do |f|
-          .col-xs-12.col-md-5.col-md-offset-1
+          .col-xs-12.col-md-6
             %h2 MON MONTANT
-            %h3 J'ADHÈRE POUR 1 AN
-            = f.fields_for :subscriptions do |subscriptions_form|
-              = subscriptions_form.label :subscription_amount
-              = subscriptions_form.text_field :subscription_amount
-            %p En donnant chaque année, je deviens membre et donateur de Vues d'en Bas pour une durée de 1 an et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
+            .col-xs-12.col-md-10.col-md-offset-1.subscription_bloc
+              .col-xs-1
+                =image_tag("black_dot.png")
+              .col-xs-11.jadhere_h3_col
+                %h3.jadhere_h3 J'ADHÈRE POUR 1 AN
+              = f.fields_for :subscriptions do |subscription|
+                .col-xs-12.subscription_bloc
+                  = subscription.label :subscription_amount, "17€", id: "subscription_checkbox_label"
+                  = subscription.check_box :subscription_amount, checked: "checked", id: "subscription_checkbox"
+                  = subscription.label :subscription_amount, "Montant libre", id: "subscription_input_label"
+                  = subscription.text_field :subscription_amount, :class => "subscription_input", type: "number"
+                  %span €
+                  %p{id: "amount_text"}
+                  %p.subscription_text En donnant chaque année, je deviens membre et donateur de <strong>Vues d'en Bas pour une durée de 1 an</strong> et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
 
-          .col-xs-12.col-md-5
+            .col-xs-10.col-xs-offset-1.hidden-xs.hidden-sm#adherent_explain_text_for_md_screen
+              =render "shared/explanation_text_for_md_screen"
+
+          .col-xs-12.col-md-6
             %h2 MES COORDONNÉES
-            %div= label_tag(:email, "Email")
-            %div= f.text_field :email
-            %span= f.check_box(:company)
-            = label_tag(:company, "Je fais un don au nom d'une organisation ou d'une société")
-            %div Civilité
-            = f.radio_button(:gender, "Female")
-            = label_tag(:gender_Female, "Madame")
-            = f.radio_button(:gender, "Male")
-            = label_tag(:gender_Male, "Monsieur")
-            %div= label_tag(:firstname, "Prénom")
-            %div= f.text_field :firstname
-            %div= label_tag(:lastname, "Nom de famille")
-            %div= f.text_field :lastname
-            %div= label_tag(:address, "Adresse postale")
-            %div= f.text_field :address
-            %div= label_tag(:additional_address_details, "Complément d'adresse")
-            %div= f.text_field :additional_address_details
-            .col-xs-5
-              %div= label_tag(:zipcode, "Code postale")
-              %div= f.text_field :zipcode
-            .col-xs-7
-              %div#city= label_tag(:city, "Ville")
-              %div= f.text_field :city
-            %div#country= label_tag(:country, "Pays")
-            %div= f.country_select(:country, priority_countries: ["FR","GB", "DE"])
-            %div= f.submit "Adhérer"
+            %div
+              = label_tag :email, "* Email"
+              %span{id: "suggested_bloc"}
+                %span Did you mean
+                %a{href: "#", id: "suggestedEmail"}
+                %span  ?
+              = f.text_field :email, placeholder: "ex. julien.dupont@gmail.com", :class => "details_field"
+            .company_bloc
+              %span= f.check_box :company
+              = label_tag :company, "Je fais un don au nom d'une organisation ou d'une société", :class => "company_label"
+            .gender_bloc
+              %p * Civilité
+              = f.radio_button :gender, "Female"
+              = label_tag :gender_Female, "Madame"
+              = f.radio_button :gender, "Male"
+              = label_tag :gender_Male, "Monsieur"
+            .firstname_bloc
+              = label_tag :adherent_firstname, "* Prénom"
+              = f.text_field :firstname, :class => "details_field"
+            .lastname_bloc
+              = label_tag :adherent_lastname, "* Nom de famille"
+              = f.text_field :lastname, :class => "details_field"
+            .address_bloc
+              = label_tag :address, "Adresse postale"
+              = f.text_field :address, :class => "details_field"
+            .additional_address_bloc
+              = label_tag :additional_address_details, "Complément d'adresse"
+              = f.text_field :additional_address_details, :class => "details_field"
+            .col-xs-5.zip_n_city
+              = label_tag :zipcode, "Code postale"
+              = f.text_field :zipcode
+            .col-xs-7.zip_n_city
+              = label_tag :city, "Ville"
+              = f.text_field :city, :class => "details_field"
+            .country_bloc
+              = label_tag :country, "Pays"
+              = f.country_select :country, selected: "FR"
+            = f.submit type: "image", src: image_path("buttons/valider.png"), alt: "Valider", class: "img-responsive valider"
+            .col-xs-12.asterisk_bloc
+              %i Les champs marqués d'un <strong>*</strong> sont obligatoires
 
-          .col-xs-12.col-md-5.col-md-offset-1
-            %p VOS DONS  servirons à financer les Maraudes, l'achat de vêtements, de nourriture, de fournitures pour les personnes sans abris, les frais liés aux évènements artistiques (Hors vernissages), les frais de l'association qui ne compte pas d'employés (bénévoles uniquement).
-            %br
-            %p Vos coordonnées sont nécessaires au traitement de vos dons. Elles restent strictement confidentielles et ne sont ni échangées ni louées à des tiers. 
-            Conformément à la loi informatique et Libertés du 6 janvier 1978, vos disposez en vous adressant au siège de Vues d'en Bas, d'un droit d'accès, de rectification et d'opposition aux informations vous concernant. 
+          =render "shared/explanation_text_for_xs_screen"
