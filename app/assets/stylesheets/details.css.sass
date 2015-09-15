@@ -34,6 +34,20 @@
 		.subscription_text
 			padding-top: 10px
 			clear: both
+
+		.amount_donation_radio_label
+			margin-left: 10px
+	
+		.donation_inputs
+			width: calc(34% - 22px)
+
+		.between_sub_and_don
+			margin-top: 30px
+			margin-bottom: 30px
+
+		#donation_explain_text_for_md_screen
+			margin-top: 109px
+			font-size: 11px
 	
 		#adherent_explain_text_for_md_screen
 			margin-top: 276px
@@ -143,5 +157,35 @@
 
 	//resize the country_select
 	@media all and (max-width: 350px)
-		#adherent_country
+		#adherent_country, #_country
 			width: 100%
+
+
+	//diminish margin-left on radio-button-label
+	@media all and (max-width: 283px)
+		.radio_label
+			margin-left: 0px !important
+	@media all and (min-width: 284px) and (max-width: 290px)
+		.radio_label
+			margin-left: 1px !important
+	@media all and (min-width: 291px) and (max-width: 313px)
+		.radio_label
+			margin-left: 3px !important
+
+
+	// resize donation inputs to look nice on every device
+	@media all and (min-width: 279px) and (max-width: 580px)
+		.donation_inputs
+			width: calc(40% - 22px) !important
+	@media all and (min-width: 581px) and (max-width: 680px)
+		.donation_inputs
+			width: calc(30% - 22px) !important
+	@media all and (min-width: 681px) and (max-width: 767px)
+		.donation_inputs
+			width: calc(25% - 22px) !important
+	@media all and (min-width: 768px) and (max-width: 991px)
+		.donation_inputs
+			width: calc(21% - 22px) !important
+	@media all and (min-width: 992px) and (max-width: 1199px)
+		.donation_inputs
+			width: calc(44% - 22px) !important
