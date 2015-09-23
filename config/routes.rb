@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'application#index'
-  resources :adherents, only: [:new, :create]
-
-  get 'donations' => 'donations#new'
-  post 'donations' => 'donations#create'
+  resources :adherents, only: [:new, :create], :path => "adhesions"
+  resources :donations, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
