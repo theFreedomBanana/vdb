@@ -17,7 +17,7 @@
                   = subscription.label :subscription_amount, "Montant libre", id: "subscription_input_label"
                   = subscription.text_field :subscription_amount, :class => "subscription_input", type: "number"
                   %span €
-                  %p{id: "amount_text"}
+                  %p{id: "subscription_amount_text"} Le montant de l'adhésion est de 17€ minimum
                   %p.subscription_text En donnant chaque année, je deviens membre et donateur de <strong>Vues d'en Bas pour une durée de 1 an</strong> et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
 
             .col-xs-10.col-xs-offset-1.hidden-xs.hidden-sm#adherent_explain_text_for_md_screen
@@ -31,7 +31,7 @@
                 %span Did you mean
                 %a{href: "#", id: "suggestedEmail"}
                 %span  ?
-              = f.text_field :email, placeholder: "ex. julien.dupont@gmail.com", :class => "details_field"
+              = f.text_field :email, placeholder: "ex. julien.dupont@gmail.com", :class => "user_email details_field"
             .company_bloc
               %span= f.check_box :company
               = label_tag :company, "Je fais un don au nom d'une organisation ou d'une société", :class => "company_label"
@@ -43,10 +43,10 @@
               = label_tag :gender_Male, "Monsieur"
             .firstname_bloc
               = label_tag :adherent_firstname, "* Prénom"
-              = f.text_field :firstname, :class => "details_field"
+              = f.text_field :firstname, :class => "user_firstname details_field"
             .lastname_bloc
               = label_tag :adherent_lastname, "* Nom de famille"
-              = f.text_field :lastname, :class => "details_field"
+              = f.text_field :lastname, :class => "user_lastname details_field"
             .address_bloc
               = label_tag :address, "Adresse postale"
               = f.text_field :address, :class => "details_field"
