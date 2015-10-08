@@ -10,19 +10,20 @@
                 =image_tag("black_dot.png")
               .col-xs-11.jadhere_h3_col
                 %h3.jadhere_h3 JE DONNE CHAQUE MOIS
-                .subscription_bloc
+                .subscription_bloc#radio_amount_bloc
                   = label_tag :subscription_amount, "5€"
-                  = radio_button_tag :subscription_amount, 5
-                  = label_tag :subscription_amount, "10€", :class => "amount_donation_radio_label"
-                  = radio_button_tag :subscription_amount, 10
-                  = label_tag :subscription_amount, "15€", :class => "amount_donation_radio_label"
-                  = radio_button_tag :subscription_amount, 15
-                  = label_tag :subscription_amount, "20€", :class => "amount_donation_radio_label"
-                  = radio_button_tag :subscription_amount, 20
+                  = radio_button_tag :subscription_amount, "5"
+                  = label_tag :subscription_amount, "10€", :class => "monthly_donation_radio_label"
+                  = radio_button_tag :subscription_amount, "10"
+                  = label_tag :subscription_amount, "15€", :class => "monthly_donation_radio_label"
+                  = radio_button_tag :subscription_amount, "15"
+                  = label_tag :subscription_amount, "20€", :class => "monthly_donation_radio_label"
+                  = radio_button_tag :subscription_amount, "20"
                 .subscription_bloc
                   %span= label_tag :subscription_amount, "Montant libre"
-                  %span= text_field_tag :subscription_amount, nil, :class => "donation_inputs", type: "number"
+                  %span= text_field_tag :subscription_amount, nil, :class => "donation_inputs", type: "number", id: "monthly_subscription_amount"
                   %span €/mois
+                  %p{id: "subscription_amount_text"} Le montant de la donation mensuelle est de 5€ minimum
                   %p.subscription_text En donnat chaque mois, je deviens membre et donateur de <strong>Vues d'en Bas</strong> et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
 
               .between_sub_and_don
@@ -33,10 +34,12 @@
                 %h3.jadhere_h3 DONATION
                 .subscription_bloc
                   %span= label_tag :donation_amount, "Montant libre"
-                  %span= text_field_tag :donation_amount, nil, :class => "donation_inputs", type: "number"
+                  %span= text_field_tag :donation_amount, nil, :class => "donation_inputs", type: "number", id: "donation_amount"
                   %span €
+                  %p{id: "donation_amount_text"} Le montant minimum d'une donation est de 1€
 
               %p.subscription_text Mon soutien servira à soutenir l'ensemble des actions de <strong>Vues d'en Bas</strong>.
+              %p{id: "no_donation_selected_text"} Veuillez choisir le type de don que vous souhaitez effectuer
 
             .col-xs-10.col-xs-offset-1.hidden-xs.hidden-sm#donation_explain_text_for_md_screen
               =render "shared/explanation_text_for_md_screen"
@@ -45,7 +48,11 @@
             %h2 MES COORDONNÉES
             %div
               = label_tag :email, "* Email"
-              = text_field_tag :email, nil, placeholder: "ex. julien.dupont@gmail.com", :class => "details_field"
+              %span{id: "suggested_bloc"}
+                %span Did you mean
+                %a{href: "#", id: "suggestedEmail"}
+                %span  ?
+              = text_field_tag :email, nil, placeholder: "ex. julien.dupont@gmail.com", :class => "user_email details_field"
             .company_bloc
               %span= check_box_tag :company
               = label_tag :company, "Je fais un don au nom d'une organisation ou d'une société", :class => "company_label"
@@ -57,10 +64,10 @@
               = label_tag :gender_Male, "Monsieur"
             .firstname_bloc
               = label_tag :firstname, "* Prénom"
-              = text_field_tag :firstname, "", :class => "details_field"
+              = text_field_tag :firstname, "", :class => "user_firstname details_field", id: "donation_firstname"
             .lastname_bloc
               = label_tag :lastname, "* Nom de famille"
-              = text_field_tag :lastname, "", :class => "details_field"
+              = text_field_tag :lastname, "", :class => "user_lastname details_field"
             .address_bloc
               = label_tag :address, "Adresse postale"
               = text_field_tag :address, "", :class => "details_field"

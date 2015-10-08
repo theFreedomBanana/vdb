@@ -2,7 +2,7 @@ $('document').ready(function() {
 
 /* Beginning of Subscription Amount Validation
 	--------------------------------------------	*/
-	$("#adherent_subscriptions_attributes_0_subscription_amount").keypress(function(event) {
+	$("#adherent_subscriptions_attributes_0_subscription_amount, #monthly_subscription_amount, #donation_amount").keypress(function(event) {
 		return isNumberKey(event);
 	});
 
