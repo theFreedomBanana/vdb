@@ -1,6 +1,10 @@
 %section
   .container
     .row
+      #errors_display_block.col-xs-12
+        -if @adherent.errors.any?
+          -@adherent.errors.each do |x, y|
+            %p=("#{y}")
       .details_form
         = form_for @adherent do |f|
           .col-xs-12.col-md-6
@@ -12,10 +16,10 @@
                 %h3.jadhere_h3 J'ADHÈRE POUR 1 AN
               = f.fields_for :subscriptions do |subscription|
                 .col-xs-12.subscription_bloc
-                  = subscription.label :subscription_amount, "17€", id: "subscription_checkbox_label"
-                  = subscription.check_box :subscription_amount, checked: "checked", id: "subscription_checkbox"
-                  = subscription.label :subscription_amount, "Montant libre", id: "subscription_input_label"
-                  = subscription.text_field :subscription_amount, :class => "subscription_input", type: "number"
+                  = subscription.label :subscription_checkbox, "17€", id: "subscription_checkbox_label", :class => "css_anomaly"
+                  = subscription.check_box :subscription_checkbox, checked: "checked", id: "subscription_checkbox", :class => "css_anomaly"
+                  = subscription.label :subscription_amount, "Montant libre", id: "subscription_input_label", :class => "css_anomaly"
+                  = subscription.text_field :subscription_amount, :class => "subscription_input css_anomaly", type: "number"
                   %span €
                   %p{id: "subscription_amount_text"} Le montant de l'adhésion est de 17€ minimum
                   %p.subscription_text En donnant chaque année, je deviens membre et donateur de <strong>Vues d'en Bas pour une durée de 1 an</strong> et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
@@ -37,9 +41,9 @@
               = label_tag :company, "Je fais un don au nom d'une organisation ou d'une société", :class => "company_label"
             .gender_bloc
               %p * Civilité
-              = f.radio_button :gender, "Female"
-              = label_tag :gender_Female, "Madame"
-              = f.radio_button :gender, "Male"
+              = f.radio_button :gender, "Female", :class => "css_anomaly"
+              = label_tag :gender_Female, "Madame", :class => "css_anomaly"
+              = f.radio_button :gender, "Male", :class => "css_anomaly"
               = label_tag :gender_Male, "Monsieur"
             .firstname_bloc
               = label_tag :adherent_firstname, "* Prénom"

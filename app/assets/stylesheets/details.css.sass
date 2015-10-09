@@ -209,3 +209,31 @@
 
 .false_input
 	border: 1px solid $red-alert !important
+
+
+/* The CSS within that block aim at fixing a rendering break when create method
+   in AdherentController renders "new" */
+.css_anomaly
+	float: left
+	margin-right: 5px !important
+
+.gender_bloc
+	p
+		margin-bottom: 2px
+
+.subscription_bloc
+	margin-top: 15px !important
+
+#adherent_subscriptions_attributes_0_subscription_amount
+	margin-top: -8px
+// End of the block
+
+
+#errors_display_block
+	clear: both
+	// padding-top: 10px
+
+	p
+		text-align: left
+		color: $red-alert
+		font-weight: bold
