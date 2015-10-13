@@ -7,7 +7,7 @@
 	= javascript_include_tag 'application'
 	= csrf_meta_tags
 	%body#articles
-		=render "shared/non_hidden_header"
+		=render "shared/details_header"
 		#articles_container.container
 			.row
 				%div{'ng-view' =>''}
