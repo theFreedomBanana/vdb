@@ -1,6 +1,10 @@
 %section
   .container
     .row
+      #errors_display_block.col-xs-12
+        -if !alert.nil?
+          -alert.each do |attr, msg|
+            %p=msg[0]
       .details_form
         = form_tag({controller: "donations", action: "create"}, method: "post") do
           .col-xs-12.col-md-6

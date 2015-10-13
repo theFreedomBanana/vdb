@@ -10,4 +10,13 @@ class Subscription < ActiveRecord::Base
 			return true
 		end
 	end
+
+	def validate_monthly_subs()
+		if self.subscription_amount < 5
+			return false
+		else
+			return true
+		end
+	end
+
 end
