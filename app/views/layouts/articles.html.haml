@@ -8,7 +8,7 @@
 	= csrf_meta_tags
 	%body#articles
 		=render "shared/details_header"
-		#articles_container.container
+		#articles_container.container-fluid
 			.row
 				%div{'ng-view' =>''}
 		=render "shared/footer"
