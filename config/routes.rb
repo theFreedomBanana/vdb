@@ -13,6 +13,12 @@ Rails.application.routes.draw do
       get '200for141500/photos' => 'articles#photos_deuxcent'
     end
   end
+  resources :orders, only: [:create], :path => "commandes" do
+    collection do
+      post '/new' => 'orders#new'
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

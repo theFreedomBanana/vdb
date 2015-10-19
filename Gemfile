@@ -19,16 +19,26 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-# puts lightbox JS/CSS in the asset pipeline - enable image display in modal 
-gem 'lightbox2-rails'
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.3'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+#use Bootsrap v 3.2
+gem 'bootstrap-sass', '~> 3.2.0'
+# puts lightbox JS/CSS in the asset pipeline - enable image display in modal 
+gem 'lightbox2-rails'
+# Adds AngularJS to the asset pipeline
+gem 'angularjs-rails'
+# Adds your HTML templates into Angular's $templateCache using Rails asset pipeline.
 
 group :development do
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

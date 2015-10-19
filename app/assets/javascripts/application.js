@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require mailcheck.min
-//= angular/angular.min
-//= angular/angular-route.min
-//= angular/angular-resource.min
+//= require angular
+//= require angular-route
+//= require angular-resource
 //= angular/main
 //= require bootstrap
 //= require lightbox
