@@ -1,13 +1,14 @@
 @import "variables"
 
 #articles_container
-	margin-bottom: 120px
-	margin-top: 120px
-	
+
 	h1, h2, h3, h4, h5, h6, p, li
 		color: black
 		text-align: left
 
+	#links_div //without it links become non clickable on small viewport
+		z-index: 1
+	
 	a:link
 		text-decoration: none
 
@@ -19,6 +20,13 @@
 
 	.colored
 		color: $yellow-text
+
+	#basket_image
+		margin-bottom: 13px
+
+	#basket_title
+		display: inline
+		font-size: 1.3em
 
 	.items_in_basket
 		margin-bottom: 7px
@@ -34,3 +42,105 @@
 
 	.items_image_in_basket
 		padding-left: 0px
+
+
+// Sets margin-top and margin-bottom on articles_container depending on screen size
+@media all and (max-width: 640px) and (max-height: 580px)
+	#articles_container
+		margin-top: 60px !important
+		margin-bottom: 60px !important
+
+	#links_div
+		margin-bottom: 5px
+
+	#basket_div
+		margin-top: 20px
+
+@media all and (min-width: 641px) and (max-width: 991px), all and (min-height: 581px)
+	#articles_container
+		margin-top: 80px !important
+		margin-bottom: 80px !important
+
+	#links_div
+		margin-bottom: 20px
+
+	#basket_div
+		margin-top: 20px
+
+@media all and (min-width: 992px)
+	#articles_container
+		margin-top: 120px !important
+		margin-bottom: 120px !important
+
+	#basket_div
+		margin-top: 0px
+
+// In small screen align links_div with articles pictures, in big screen keep links_div besides pictures
+@media all and (max-width: 850px)
+	#links_div
+		padding-left: 20px
+
+@media all and (min-width: 851px) and (max-width: 991px)
+	#links_div
+		padding-left: 30px
+
+@media all and (min-width: 1300px) and (max-width: 1391px)
+	#links_div
+		padding-left: 30px
+
+@media all and (min-width: 1390px) and (max-width: 1479px)
+	#links_div
+		padding-left: 50px
+
+@media all and (min-width: 1480px) and (max-width: 1569px)
+	#links_div
+		padding-left: 70px
+
+@media all and (min-width: 1570px) and (max-width: 1659px)
+	#links_div
+		padding-left: 90px
+
+@media all and (min-width: 1660px) and (max-width: 1749px)
+	#links_div
+		padding-left: 110px
+
+@media all and (min-width: 1750px) and (max-width: 1839px)
+	#links_div
+		padding-left: 130px
+
+@media all and (min-width: 1840px)
+	#links_div
+		padding-left: 150px
+
+
+// Change font size depending of viewport size
+@media all and (max-width: 640px)
+	#articles_container
+		h4
+			font-size: 0.9em
+
+		li
+			font-size: 0.9em
+
+		#basket_title
+			font-size: 1.2em
+
+
+// Align text price with artcle pictures
+@media all and (max-width: 991px)
+	#text_price_div
+		padding-left: 6px
+
+@media all and (min-width: 992px)
+	#text_price_div
+		padding-left: 15px
+
+
+// Align the basket_div with articles pictures
+@media all and (max-width: 850px)
+	#basket_div
+		padding-left: 20px
+
+@media all and (min-width: 851px) and (max-width: 991px)
+	#basket_div
+		padding-left: 30px

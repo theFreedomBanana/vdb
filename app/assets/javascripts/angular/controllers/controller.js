@@ -8,7 +8,7 @@ articleController.controller('LexpoAffichesCtrl', ['$scope', '$http',
 		$scope.changeUrl = function(url) {
 			$location.url("articles/"+url);
 		};
-		$scope.columns = "col-xs-12 col-sm-4 col-md-3";
+		$scope.columns = "col-xs-6 col-sm-4 col-lg-3";
 		$scope.colored1 = "colored";
 		$scope.basket = BasketItems.get();
 		$scope.total = BasketItems.calculateTotal();
@@ -20,6 +20,7 @@ articleController.controller('LexpoAffichesCtrl', ['$scope', '$http',
 			BasketItems.removeItem(p);
 			$scope.total = BasketItems.calculateTotal();
 		};
+		$scope.text_price = "Affiches originales 40x60cm en édition limitée, signées et numérotées sur cadapac prêtes à accrocher: 80€";
 }]);
 
 articleController.controller('LexpoPhotosCtrl', ['$scope', '$http',
@@ -30,7 +31,7 @@ articleController.controller('LexpoPhotosCtrl', ['$scope', '$http',
 		$scope.changeUrl = function(url) {
 			$location.url("articles/"+url);
 		};
-		$scope.columns = "col-xs-12 col-sm-4 col-md-4";
+		$scope.columns = "col-xs-6 col-sm-4 col-md-6 col-lg-4";
 		$scope.colored2 = "colored";
 		$scope.basket = BasketItems.get();
 		$scope.total = BasketItems.calculateTotal();
@@ -42,6 +43,7 @@ articleController.controller('LexpoPhotosCtrl', ['$scope', '$http',
 			BasketItems.removeItem(p);
 			$scope.total = BasketItems.calculateTotal();
 		};
+		$scope.text_price = "Photos originales 40x60cm en édition limitée, signées et numérotées sur cadapac prêtes à accrocher: 80€";
 }]);
 
 articleController.controller('LexpoPostersCtrl', ['$scope', '$http',
@@ -52,7 +54,7 @@ articleController.controller('LexpoPostersCtrl', ['$scope', '$http',
 		$scope.changeUrl = function(url) {
 			$location.url("articles/"+url);
 		};
-		$scope.columns = "col-xs-12 col-sm-4 col-md-3";
+		$scope.columns = "col-xs-6 col-sm-4 col-lg-3";
 		$scope.colored3 = "colored";
 		$scope.basket = BasketItems.get();
 		$scope.total = BasketItems.calculateTotal();
@@ -64,6 +66,7 @@ articleController.controller('LexpoPostersCtrl', ['$scope', '$http',
 			BasketItems.removeItem(p);
 			$scope.total = BasketItems.calculateTotal();
 		};
+		$scope.text_price = "Reproductions poster 40x60cm papier poster gloss : 20€ (frais d'envois inclus en France métropolitaine)";
 }]);
 
 articleController.controller('200For141500PhotosCtrl', ['$scope', '$http',
@@ -74,7 +77,7 @@ articleController.controller('200For141500PhotosCtrl', ['$scope', '$http',
 		$scope.changeUrl = function(url) {
 			$location.url("articles/"+url);
 		};
-		$scope.columns = "col-xs-12 col-sm-4 col-md-3";
+		$scope.columns = "col-xs-6 col-sm-4 col-lg-3";
 		$scope.colored4 = "colored";
 		$scope.basket = BasketItems.get();
 		$scope.total = BasketItems.calculateTotal();
@@ -86,4 +89,5 @@ articleController.controller('200For141500PhotosCtrl', ['$scope', '$http',
 			BasketItems.removeItem(p);
 			$scope.total = BasketItems.calculateTotal();
 		};
+		$scope.text_price = "Photos originales 40x60cm en édition limitée, sur Dibond, prêtes à accrocher: 200€";
 }]);

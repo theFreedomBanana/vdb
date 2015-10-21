@@ -1,5 +1,5 @@
-<div class="col-xs-12 col-md-3 col-lg-2 col-lg-offset-1">
-	<div>
+<div id="links_div" class="col-xs-12 col-md-3">
+	<!-- <div> -->
 		<h4>VUE D'EN BAS L'EXPO</h4>
 		<p>Qu'aimeriez-vous voir depuis votre fenêtre ?</p>
 		<ul>
@@ -19,8 +19,7 @@
 				<li class="{{colored4}}">- LES PHOTOS</li>
 			</a>
 		</ul>
-	</div>
-	
+	<!-- </div> -->
 </div>
 
 <form> <!-- Form inutile mais sans la 1ère photo est marging-bottom sans raison -->
@@ -33,20 +32,25 @@
 				</a>
 			</li>
 		</ul>
+		<div id="text_price_div" class="col-xs-12">
+			<p>{{text_price}}</p>
+		</div>
 	</div>
 </form>
 
-<div class="col-md-3">
-	<h4>Mon Panier : {{total | currency: '€'}}</h4>
+<div id="basket_div" class="col-xs-12 col-sm-8 col-md-3">
+	<img id="basket_image" src="assets/basket.jpg"></img>
+	<p id="basket_title">Mon Panier : {{total | currency: '€'}}</p>
 	<ul class="col-xs-12 items_in_basket" ng-repeat="item in basket track by $index">
 		<li>
-			<img ng-src="assets/articles/{{item.name}}.jpg" class="col-xs-5 img-responsive items_image_in_basket"></img>
+			<img ng-src="assets/articles/{{item.name}}.jpg" class="col-xs-3 col-md-5 col-lg-4 img-responsive items_image_in_basket"></img>
 			<span class="col-xs-3">{{item.price | currency: '€'}}</span>
 			<span class="col-xs-4" ng-click="remove($index)"><button type="button" class="btn btn-default">-</button></span>
 		</li>
 	</ul>
 	<form action="commandes/new" method="post" class="">
 		<input type="hidden" value={{basket}} name="panier">
-		<button type="submit" class="btn">Valider</button>
+		<input type="image" name="submit" src="assets/buttons/valider_ma_commande.jpg" alt="submit"/>
+		</button>
 	</form>
 </div>
