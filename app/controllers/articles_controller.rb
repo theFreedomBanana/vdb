@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def affiches_lexpo
-		@articles = Article.where(expo: "Vues d'en Bas").where(category: 'affiches')
+		@articles = Article.where(expo: "Vues d'en Bas").where(category: 'affiches originales')
 	end
 
 	def photos_lexpo
