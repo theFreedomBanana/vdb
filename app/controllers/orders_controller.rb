@@ -1,8 +1,14 @@
 class OrdersController < ApplicationController
+	include Panier
+	include OrdersHelper
 	# before_action :set_order, only: [:new]
 	respond_to :html, :xml, :json
+	layout "details"
 
 	def new
+		# @customer = Customer.new
+    # @customer.orders.build
+    # respond_with(@customer)
 	end
 
 	def verified_request?

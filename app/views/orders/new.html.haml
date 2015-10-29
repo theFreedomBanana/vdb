@@ -1,1 +1,68 @@
-%h1 New order page
+%section
+  .container
+    .row
+      .details_form
+        = form_tag({controller: "orders", action: "create"}, method: "post") do
+          .col-xs-12.col-md-6
+            %h2 MA COMMANDE
+            .col-xs-12.col-md-10.col-md-offset-1.subscription_bloc
+              .col-xs-12.blocs_in_cmd#basket_block
+                =image_tag("basket.png", :class => "basket_image")
+                %span{:class => "num_of_art"}= num_of_art_in_basket
+
+              -@panier.each do |x|
+                .col-xs-4.blocs_in_cmd
+                  =image_tag "articles/#{x[:name]}.jpg", :class => "img-responsive image", :alt => "article image images_basket_col"
+
+              .col-xs-12.blocs_in_cmd
+                %p{:id => "add_articles"}=link_to "AJOUTER DES ARTICLES", vuesdenbaslexpo_affiches_articles_path
+                %p{:class => "total_price"} TOTAL : 
+                %span{:class => "total_price"}= basket_total_price
+                %span{:class => "total_price"} €
+                %p{:class => "thx"} VUES D'EN BAS VOUS REMERCIE
+            =render "shared/order_explanation_text_for_md_screen"
+
+          .col-xs-12.col-md-6
+            %h2 MES COORDONNÉES
+            %div
+              = label_tag :email, "* Email"
+              %span{id: "suggested_bloc"}
+                %span Did you mean
+                %a{href: "#", id: "suggestedEmail"}
+                %span  ?
+              = text_field_tag :email, nil, placeholder: "ex. julien.dupont@gmail.com", :class => "user_email details_field"
+            .company_bloc
+              %span= check_box_tag :company
+              = label_tag :company, "Je fais un don au nom d'une organisation ou d'une société", :class => "company_label"
+            .gender_bloc
+              %p * Civilité
+              = radio_button_tag :gender, "Female"
+              = label_tag :gender_Female, "Madame"
+              = radio_button_tag :gender, "Male"
+              = label_tag :gender_Male, "Monsieur"
+            .firstname_bloc
+              = label_tag :firstname, "* Prénom"
+              = text_field_tag :firstname, "", :class => "user_firstname details_field", id: "donation_firstname"
+            .lastname_bloc
+              = label_tag :lastname, "* Nom de famille"
+              = text_field_tag :lastname, "", :class => "user_lastname details_field"
+            .address_bloc
+              = label_tag :address, "Adresse postale"
+              = text_field_tag :address, "", :class => "details_field"
+            .additional_address_bloc
+              = label_tag :additional_address_details, "Complément d'adresse"
+              = text_field_tag :additional_address_details, "", :class => "details_field"
+            .col-xs-5.zip_n_city
+              = label_tag :zipcode, "Code postale"
+              = text_field_tag :zipcode
+            .col-xs-7.zip_n_city
+              = label_tag :city, "Ville"
+              = text_field_tag :city, "", :class => "details_field"
+            .country_bloc
+              = label_tag :country, "Pays"
+              = country_select("", :country, selected: "FR")
+            = image_submit_tag "buttons/valider.png", class: "img-responsive valider"
+            .col-xs-12.asterisk_bloc
+              %i Les champs marqués d'un <strong>*</strong> sont obligatoires
+
+          =render "shared/order_explanation_text_for_xs_screen"
