@@ -6,7 +6,7 @@
           -@adherent.errors.each do |x, y|
             %p=("#{y}")
       .details_form
-        = form_for @adherent do |f|
+        = form_for @adherent, html:{id: "payment-form"} do |f|
           .col-xs-12.col-md-6
             %h2 MON MONTANT
             .col-xs-12.col-md-10.col-md-offset-1.subscription_bloc
@@ -21,6 +21,18 @@
                   = subscription.label :subscription_amount, "Montant libre", id: "subscription_input_label", :class => "css_anomaly"
                   = subscription.text_field :subscription_amount, :class => "subscription_input css_anomaly", type: "number"
                   %span €
+                  
+                  .card_number_bloc
+                    = label_tag :card_number, "* Numéro de carte"
+                    = text_field_tag :card_number, "", :class => "details_field", :"data-stripe" => "number"
+                  .cvc_number_bloc
+                    = label_tag :cvc, "* Cryptogramme", :class => "cvc_label"
+                    = text_field_tag :cvc, "", :class => "cvc_input", :"data-stripe" => "cvc", size: "4"
+                  .expiration_bloc
+                    %div= label_tag :expiration_month, "* Date d'expiration"
+                    = select_month(Date.today, {use_month_names: %w(Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre)}, html_options = {:"data-stripe" => "exp-month"})
+                    = select_year(Date.today, {start_year: Time.now.year, end_year: Time.now.year + 30}, html_options = {:"data-stripe" => "exp-year"})
+
                   %p{id: "subscription_amount_text"} Le montant de l'adhésion est de 17€ minimum
                   %p.subscription_text En donnant chaque année, je deviens membre et donateur de <strong>Vues d'en Bas pour une durée de 1 an</strong> et adhère à ses valeurs. Je recevrai ma carte de membre par courrier électronique.
 
