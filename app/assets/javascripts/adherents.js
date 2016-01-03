@@ -2,7 +2,7 @@ $('document').ready(function() {
 
 /* Beginning of Subscription Amount Validation
 	--------------------------------------------	*/
-	$("#adherent_subscriptions_attributes_0_subscription_amount, #monthly_subscription_amount, #donation_amount").keypress(function(event) {
+	$("#adherent_subscriptions_attributes_0_subscription_amount, #monthly_subscription_amount, #donation_amount, .card_number_input, .cvc_input").keypress(function(event) {
 		return isNumberKey(event);
 	});
 
@@ -63,9 +63,9 @@ $('document').ready(function() {
 	});// Ends Gender Validation
 
 
-/* Name Validation
+/* Credit Card & Name Validation
 	---------------	*/
-	$(".user_firstname, .user_lastname").blur(function() {
+	$(".card_number_input, .cvc_input, .user_firstname, .user_lastname").blur(function() {
 		validatePresence(this);
 	});//Ends Name Validation
 
@@ -85,7 +85,7 @@ $('document').ready(function() {
 		if(!validateGender(".gender_bloc") ) {
 			event.preventDefault();
 		}
-		[$(".user_firstname"), $(".user_lastname")].forEach(function(element) {
+		[$(".card_number_input"), $(".cvc_input"), $(".user_firstname"), $(".user_lastname")].forEach(function(element) {
 			if( !validatePresence(element) ) {
 				event.preventDefault();
 			}

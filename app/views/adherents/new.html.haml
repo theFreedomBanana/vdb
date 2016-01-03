@@ -24,7 +24,7 @@
                   
                   .card_number_bloc
                     = label_tag :card_number, "* Numéro de carte"
-                    = text_field_tag :card_number, "", :class => "details_field", :"data-stripe" => "number"
+                    = text_field_tag :card_number, "", :class => "details_field card_number_input", :"data-stripe" => "number"
                   .cvc_number_bloc
                     = label_tag :cvc, "* Cryptogramme", :class => "cvc_label"
                     = text_field_tag :cvc, "", :class => "cvc_input", :"data-stripe" => "cvc", size: "4"
