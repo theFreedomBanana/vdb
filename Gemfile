@@ -9,8 +9,6 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'country_select', github: 'stefanpenner/country_select'
 # Use HAML and replace erb template with haml
 gem "haml-rails"
-#use Bootsrap v 3.2
-gem 'bootstrap-sass', '~> 3.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,10 +24,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 #use Bootsrap v 3.2
@@ -38,7 +32,10 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'lightbox2-rails'
 # Adds AngularJS to the asset pipeline
 gem 'angularjs-rails'
-# Adds your HTML templates into Angular's $templateCache using Rails asset pipeline.
+# Use Stripe for handling paiement  
+gem 'stripe', '1.31.0'
+# Use Figaro to hide secret keys
+gem 'figaro', '1.1.1'
 
 group :development do
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
