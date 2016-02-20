@@ -27,6 +27,10 @@
 				%h1 REDONNONS UN SENS HUMAIN AU TERME SDF.
 			#middle_line.col-xs-4.col-xs-offset-4
 				%p#loi Association loi 1901
-			
+			.col-xs-12.col-md-8.col-md-offset-2
+				- if flash.notice
+					%p.congrats=flash.notice  
+
+
 			.col-xs-1.col-lg-4#bloc_fleche
 				= image_tag("logos/fleche_blanche.png", :id =>"fleche_blanche", :class =>"img-responsive", :alt =>"fleche_blanche")

@@ -27,7 +27,7 @@ class AdherentsController < ApplicationController
       @adherent.subscriptions.last.ends_at = @adherent.subscriptions.last.created_at.next_year
       @adherent.save
       stripe_charge(cents_amount, @adherent.id)
-      redirect_to root_path
+      redirect_to root_path, notice: "Félicitations ! Vous êtes dès maintenant adhérent de l'association Vues d'en Bas"
     else
       render "new"
     end
