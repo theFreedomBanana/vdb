@@ -1,3 +1,35 @@
+/* Submit Adhesions Validation - Used by Stripe.js
+	---------------------------	*/
+function preventBadFormSubmission(event) {
+	if( $("#subscription_checkbox").is(":checked") ) {
+		$("#adherent_subscriptions_attributes_0_subscription_amount").val(17);
+	}
+
+	var presence = true;
+	[$(".card_number_input"), $(".cvc_input"), $(".user_firstname"), $(".user_lastname")].forEach(function(element) {
+		if( !validatePresence(element) ) {
+			presence = false;
+		}
+	});
+	if( !isSubsAmountEnough("#adherent_subscriptions_attributes_0_subscription_amount") ) {
+		presence = false;
+	}
+	if( !validateEmail(".user_email") ) {
+		presence = false;
+	} 
+	if( !validateGender(".gender_bloc") ) {
+		presence = false;
+	}
+	if( presence == false ) {
+		event.preventDefault();
+		return false;
+	} else {
+		return true;
+	}
+};
+
+
+
 $('document').ready(function() {
 
 /* Beginning of Subscription Amount Validation
@@ -69,28 +101,6 @@ $('document').ready(function() {
 		validatePresence(this);
 	});//Ends Name Validation
 
-
-/* Submit Adhesions Validation
-	---------------------------	*/
-	$('form').submit(function(event) {
-		if( !isSubsAmountEnough("#adherent_subscriptions_attributes_0_subscription_amount") ) {
-			event.preventDefault();
-		}
-		if( $("#subscription_checkbox").is(":checked") ) {
-			$("#adherent_subscriptions_attributes_0_subscription_amount").val(17);
-		}
-		if( !validateEmail('.user_email') ) {
-			event.preventDefault();
-		}
-		if(!validateGender(".gender_bloc") ) {
-			event.preventDefault();
-		}
-		[$(".card_number_input"), $(".cvc_input"), $(".user_firstname"), $(".user_lastname")].forEach(function(element) {
-			if( !validatePresence(element) ) {
-				event.preventDefault();
-			}
-		});
-	});// Ends Submit Validation
 
 });// End of (document).ready
 

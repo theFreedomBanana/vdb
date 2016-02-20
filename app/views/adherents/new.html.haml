@@ -7,6 +7,8 @@
             %p=("#{y}")
       .details_form
         = form_for @adherent, html:{id: "payment-form"} do |f|
+          .col-xs-12
+            %p.payment-errors
           .col-xs-12.col-md-6
             %h2 MON MONTANT
             .col-xs-12.col-md-10.col-md-offset-1.subscription_bloc

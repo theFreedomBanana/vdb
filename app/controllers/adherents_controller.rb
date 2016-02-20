@@ -1,6 +1,8 @@
 class AdherentsController < ApplicationController
+  include AdhesionsHelper
   respond_to :html, :xml, :json
   layout "details"
+
 
   def new
     @adherent = Adherent.new
@@ -9,8 +11,12 @@ class AdherentsController < ApplicationController
   end
 
   def create
+    amount = 0
+    params["adherent"]["subscriptions_attributes"]["0"]["subscription_checkbox"] == "1" ? amount = 17 : amount = params["adherent"]["subscriptions_attributes"]["0"]["subscription_amount"].to_i
+    cents_amount = amount*100
+    test = adherent_params
     @adherent = Adherent.new(adherent_params)
-    if !@adherent.subscriptions.last.validate_annual_subs()
+    if !@adherent.subscriptions.last.validate_annual_subs
       @adherent.valid?
       @adherent.errors.messages.store(:subscription_amount, ["Le montant minimum de l'adhésion est de 17€"])
       render "new"
@@ -20,7 +26,8 @@ class AdherentsController < ApplicationController
       @adherent.subscriptions.last.save
       @adherent.subscriptions.last.ends_at = @adherent.subscriptions.last.created_at.next_year
       @adherent.save
-      redirect_to new_adherent_path
+      stripe_charge(cents_amount, @adherent.id)
+      redirect_to root_path
     else
       render "new"
     end
