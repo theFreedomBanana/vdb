@@ -4,20 +4,20 @@ Rails.application.routes.draw do
   root 'application#index'
 
   resources :adherents, only: [:new, :create], :path => "adhesions"
-  resources :donations, only: [:new, :create]
-  resources :articles do
-    collection do
-      get 'vuesdenbaslexpo/affiches' => 'articles#affiches_lexpo'
-      get 'vuesdenbaslexpo/photos' => 'articles#photos_lexpo'
-      get 'vuesdenbaslexpo/posters' => 'articles#posters_lexpo'
-      get '200for141500/photos' => 'articles#photos_deuxcent'
-    end
-  end
-  resources :orders, only: [:create], :path => "commandes" do
-    collection do
-      post '/new' => 'orders#new'
-    end
-  end
+  # resources :donations, only: [:new, :create]
+  # resources :articles do
+  #   collection do
+  #     get 'vuesdenbaslexpo/affiches' => 'articles#affiches_lexpo'
+  #     get 'vuesdenbaslexpo/photos' => 'articles#photos_lexpo'
+  #     get 'vuesdenbaslexpo/posters' => 'articles#posters_lexpo'
+  #     get '200for141500/photos' => 'articles#photos_deuxcent'
+  #   end
+  # end
+  # resources :orders, only: [:create], :path => "commandes" do
+  #   collection do
+  #     post '/new' => 'orders#new'
+  #   end
+  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,12 +3,11 @@
 		.row.full_width_row
 			.col-xs-8.col-xs-offset-2.col-sm-12.col-sm-offset-0#block_col12
 				.col-xs-12.col-md-4.block_text#block_donner
-					= link_to image_tag("buttons/cta_jedonne.png", :id => "faire_un_don", :class =>"img-responsive button_image", :alt =>"commander"), new_donation_path
+					= image_tag("buttons/cta_jedonne.png", :id => "faire_un_don", :class =>"img-responsive button_image", :alt =>"commander")
 					%p Vous pouvez nous faire un don par chèque à l'ordre de "Vues d'en bas", au 4 rue d'Avron 75020 Paris, ou par virement bancaire (envoyez nous un mail pour recevoir un rib). Vos dons serviront la création de nouveaux projets artistiques ainsi que la distribution de nourriture et de vêtements.
 				.col-xs-12.col-md-4.block_text#block_adherer
 					= link_to image_tag("buttons/cta_jadhere.png", :id => "adherer", :class =>"img-responsive button_image", :alt =>"commander"),new_adherent_path
 					%p Pour devenir membre de l'association Vues d'en Bas, une cotisation annuelle de 17€ par an vous sera demandée. En faisant partie de l'association, vous participez par votre cotisation à la mise en place et la création de nouveaux projets artistiques et devenez, vous aussi, un militant de la lutte contre l'invisibilité.
 				.col-xs-12.col-md-4.block_text#block_commander
-					= link_to image_tag("buttons/cta_commander.png", :id => "commander", :class =>"img-responsive button_image", :alt =>"commander"),
-						vuesdenbaslexpo_affiches_articles_path
+					= image_tag("buttons/cta_commander.png", :id => "commander", :class =>"img-responsive button_image", :alt =>"commander")
 					%p Vous souhaitez lutter contre l'invisibilité des personnes sans abris en rendant visible nos oeuvres ? L'association Vues d'en Bas vous attend, et vous invite à en commander une.
